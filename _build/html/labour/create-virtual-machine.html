@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание виртуальной машины &#8212; Системное и прикладное программное обеспечение</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Программное обеспечение" href="../lesson/computer-software.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Системное и прикладное программное обеспечение</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Об учебнике
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лекции
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lesson/computing-intro.html">
+   Введение в компьютеры
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/binary-code.html">
+     Двоичный код
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/computer-hardware.html">
+     Аппаратное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/computer-software.html">
+     Программное обеспечение
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Практические работы
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Создание виртуальной машины
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/labour/create-virtual-machine.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wolodyx/sppo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wolodyx/sppo/issues/new?title=Issue%20on%20page%20%2Flabour/create-virtual-machine.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubuntu">
+   Загрузка дистрибутива ОС Ubuntu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#virtualbox">
+   Установка VirtualBox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Создание пустой виртуальной машины
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Установка ОС на виртуальную машину
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Установка расширений VirtualBox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Настройка виртуальной машины
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Установка дополнительных пакетов
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Создание виртуальной машины<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<!-- Обоснование выбора ОС Ubuntu -->
+<p>Для работы нам понадобится машина с установленной ОС Ubuntu.
+Эта система удобна в использовании и в исходном состоянии укомплектована необходимыми программами.</p>
+<!-- Цель работы -->
+<p>Цель этой работы – подготовить машину с ОС Ubuntu для выполнения последующих заданий.</p>
+<!-- План работ -->
+<p>Вкратце план действий выглядит следующим образом:</p>
+<ul class="simple">
+<li><p>Загрузка дистрибутива ОС Ubuntu.</p></li>
+<li><p>Установка VirtualBox.</p></li>
+<li><p>Создание пустой виртуальной машины.</p></li>
+<li><p>Установка ОС на виртуальную машину.</p></li>
+<li><p>Установка расширений VirtualBox.</p></li>
+<li><p>Настройка виртуальной машины.</p></li>
+<li><p>Установка дополнительных пакетов.</p></li>
+</ul>
+<div class="section" id="ubuntu">
+<h2>Загрузка дистрибутива ОС Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>Дистрибутив с Ubuntu доступен для скачивания на сайтах <a class="reference external" href="https://ubuntu.ru">ubuntu.ru</a> и <a class="reference external" href="https://ubuntu.com">ubuntu.com</a>.
+На 2021 год доступны версии 20.04 LTS (Focal Fossa) и 21.04 (Hirsute Hippo).
+Дистрибутивы подготовлены под конкретные аппаратные платформы.
+Платфома определяется архитектурой процессора (x86) и разрядностью (32 и 64 бита).
+Тип аппаратной платформы будет прописана в имени скачиваемого файла, а также в гиперссылке на него.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Обычно при загрузке аппаратная платформа выбирается автоматически, и она совпадает с платформой вашего компьютера.
+Если мы устанавливаем систему на другой компьютер, необходим проверить совместимость дистрибутива с ним.</p>
+</div>
+<p>Выберим ту платформу, которая нам точно подойдет.
+Если наш компьютер использует 32-битный процессор, то нет причины скачивать 64-биную версию дистрибутива.</p>
+<p>Скачиваемый файл имеет формат и расширение iso – образ оптического диска.
+Он нам понадобится далее для установки ОС на машину (компьютер).</p>
+</div>
+<div class="section" id="virtualbox">
+<h2>Установка VirtualBox<a class="headerlink" href="#virtualbox" title="Permalink to this headline">¶</a></h2>
+<!-- Виртуальная машина -->
+<p>Мы вольны установить Ubuntu на домашний настольный компьютер или ноутбук параллельно основной ОС.
+Но это подвергает риску основную систему.
+Поэтому сделаем по-другому – развернем дистрибутив не на настоящей машине, а на виртуальной.
+Виртуальную машину можно загрузить на флешку и запустить на другом компьютере.
+Она представлена в виде файла.</p>
+<p>Для создания и запуска виртуальной машины нам понадобится программа <a class="reference external" href="https://virtualbox.org">VirtualBox</a>.
+Она доступна бесплатно и свободна для использования.
+Загрузим и установим ее на те компьютеры, на которых мы планируем запускать виртуальную машину с Ubuntu.</p>
+</div>
+<div class="section" id="id2">
+<h2>Создание пустой виртуальной машины<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Запустите программу VirtualBox.
+Перед нами появится окно программы без списка виртуальных машин.</p>
+<img alt="../_images/VirtualBox-1.png" src="../_images/VirtualBox-1.png" />
+<p>В появившемся окне нажмите кнопку <code class="docutils literal notranslate"><span class="pre">Создать</span></code> на панели инструментов.
+Появится диалоговое окно “Создать виртуальную машину”.
+На первом шаге создания виртуальной машины выбирается имя и тип ОС.
+В нашем случае это Linux и Ubuntu (64-bit).
+Альтернативой может быть Linux и Ubuntu (32-bit).
+Имя может быть любым, в этом конкретном случае было выбрано “Ubuntu 21.04”.
+Переходим на следующий шаг нажатием кнопки <code class="docutils literal notranslate"><span class="pre">Далее</span></code>.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-2.png" src="../_images/VirtualBox-2.png" />
+</div>
+<p>На втором шаге указываем объем оперативной памяти.
+По умолчанию, программа предлагает 1 Гб.
+Но мы выберем 2 Гб, так как аппаратных ресурсов на нашей машине хватает.
+Это значение можно изменить позже в настройках.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-3.png" src="../_images/VirtualBox-3.png" />
+</div>
+<p>На третьем шаге создаем новый виртуальный жесткий диск.
+Поэтому выберем переключателем соответствующий пункт.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-4.png" src="../_images/VirtualBox-4.png" />
+</div>
+<p>Последующие шаги связаны с настройкой виртуального жесткого диска.
+Здесь мы укажем первый пункт – <code class="docutils literal notranslate"><span class="pre">VDI</span> <span class="pre">(VirtualBox</span> <span class="pre">Disk</span> <span class="pre">Image)</span></code>.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-5.png" src="../_images/VirtualBox-5.png" />
+</div>
+<p>Здесь указываете формат хранения диска – динамический или фиксированный.
+Выберите любой из них.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-6.png" src="../_images/VirtualBox-6.png" />
+</div>
+<p>На последнем шаге настройки диска выбирается наибольший размер жесткого диска.
+По умолчанию программа предлагает 10 Гб.
+Но этот объем быстро займется данными.
+Поэтому выберите как можно больше объема: от 30 до 50 Гб.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-7.png" src="../_images/VirtualBox-7.png" />
+</div>
+<p>В основном окне программы появится новая виртуальная машина под именем “Ubuntu 21.04”.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-8.png" src="../_images/VirtualBox-8.png" />
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Установка ОС на виртуальную машину<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Следующим шагом после создания виртуальной машины станет установка операционной системы.
+Перед установкой примонтирует наш загруженный образ <code class="docutils literal notranslate"><span class="pre">ubuntu-21.04-desktop-amd64.iso</span></code> в оптический привод.
+В реальности это выглядело бы как установка DVD-диска в дисковод.
+Для этого нажмите кнопку <code class="docutils literal notranslate"><span class="pre">Настроить</span></code> при выделенной в списке машине.
+Появится диалоговое окно “Ubuntu 21.04 - Настройки”
+В окне выберите <code class="docutils literal notranslate"><span class="pre">Носители</span></code>, <code class="docutils literal notranslate"><span class="pre">Контроллер:</span> <span class="pre">IDE</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Пусто</span></code>.
+Нажмите на значок с диском и появится выпадающее меню.
+В меню выберите команду <code class="docutils literal notranslate"><span class="pre">Выбрать</span> <span class="pre">файл</span> <span class="pre">диска...</span></code>.
+В появившемся диалоговом окне выберите файл с образом дистрибутива.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-9.png" src="../_images/VirtualBox-9.png" />
+</div>
+<p>В настройках появится элемент с названием открытого файла образа.</p>
+<div class="figure align-default">
+<img alt="../_images/VirtualBox-10.png" src="../_images/VirtualBox-10.png" />
+</div>
+<p>Запустите машину, нажав кнопку <code class="docutils literal notranslate"><span class="pre">Запустить</span></code>.
+Выполняйте инструкции установщика ОС.
+В конце система попросит перезагрузки.
+Выключите машину и перейдите в настройки <code class="docutils literal notranslate"><span class="pre">Носители</span></code>.
+Удалите из оптического привода образ с установщиком Ubuntu.
+Повторно запустите виртуальную машину.</p>
+<img alt="../_images/Ubuntu-21.04.png" src="../_images/Ubuntu-21.04.png" />
+</div>
+<div class="section" id="id4">
+<h2>Установка расширений VirtualBox<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Для улучшения удобства взаимодействия с виртуальной машиной необходимо установить дополнительное системное ПО от VirtualBox.</p>
+<p>Примонтируем к оптическому приводу файл <code class="docutils literal notranslate"><span class="pre">VBoxGuestAdditions_6.1.16.iso</span></code>.
+Файл можно смонтировать двумя способами: через настройку <code class="docutils literal notranslate"><span class="pre">Носители</span></code> или главное меню запущенной машины <code class="docutils literal notranslate"><span class="pre">Устройства</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Подключить</span> <span class="pre">образ</span> <span class="pre">диска</span> <span class="pre">Дополнений</span> <span class="pre">гостевой</span> <span class="pre">ОС...</span></code>
+Откроем программу Files с обозревателем файловой системы.
+Ее ярлык в виде папки расположен на левой вертикальной панели рабочего стола.
+Среди стандартных каталогов мы увидим примонтированный образ <code class="docutils literal notranslate"><span class="pre">VBox_GAs_6.1.16</span></code> в виде каталога.
+Откроем его и двойным щелчком мыши запустите файл <code class="docutils literal notranslate"><span class="pre">autorun.sh</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Эти же действия мы можем выполнить из эмулятора терминала.
+Вызовем его горячими клавишами <code class="docutils literal notranslate"><span class="pre">Ctrl+Alt+T</span></code>.
+Перейдем в каталог <code class="docutils literal notranslate"><span class="pre">/media/sppo/VBox_GAs_6.1.16/</span></code> и запустим на выполнение файл <code class="docutils literal notranslate"><span class="pre">autorun.sh</span></code> командами</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /media/sppo/VBox_GAs_6.1.16
+./autorun.sh
+</pre></div>
+</div>
+</div>
+<p>После перезагрузки экран виртуальной машины развернется на все предоставленное ему пространство.</p>
+</div>
+<div class="section" id="id5">
+<h2>Настройка виртуальной машины<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Объединим системные буферы двум машин (виртуальной и основной) в один.
+Включим опцию <code class="docutils literal notranslate"><span class="pre">Двунаправленный</span></code>, расположенную в меню <code class="docutils literal notranslate"><span class="pre">Устройства</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Общий</span> <span class="pre">буфер</span> <span class="pre">обмена</span></code>.</p>
+</div>
+<div class="section" id="id6">
+<h2>Установка дополнительных пакетов<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Установим дополнительные пакеты в систему, которые нам понадобятся для выполнения работ.</p>
+<!-- build-essential -->
+<p>Пакет build-essential содержит набор инструментальных средств, библиотек и заголовочных файлов для сборки программ из исходных кодов.</p>
+<p>Пакет <code class="docutils literal notranslate"><span class="pre">manpages-dev</span></code> содержит справочное руководство о системных функциях.</p>
+<p>Текстовый редактор <code class="docutils literal notranslate"><span class="pre">vim</span></code> не входит по умолчанию в систему.
+Его установим тоже.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install build-essential
+sudo apt install manpages-dev
+sudo apt install vim
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./labour"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../lesson/computer-software.html" title="previous page">Программное обеспечение</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Лазарев В.В.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
