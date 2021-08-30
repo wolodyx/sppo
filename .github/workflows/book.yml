@@ -20,8 +20,7 @@ jobs:
         run: pip install jupyter-book     
 
       - name: Build the book
-        run: |
-          jupyter-book build --builder html .
+        run: ./build.sh
 
       - name: Github Pages action
         uses: peaceiris/actions-gh-pages@v3.5.9

@@ -15,3 +15,7 @@ parts:
 - caption: Практические работы
   chapters:
   - file: labour/create-virtual-machine
+
+- caption: Презентации
+  chapters:
+  - file: report/intro.md
