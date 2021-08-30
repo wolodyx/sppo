@@ -39,3 +39,4 @@ parts:
 - caption: Презентации
   chapters:
   - file: report/intro.md
+  - file: report/computer-hardware
