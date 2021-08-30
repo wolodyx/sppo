@@ -11,6 +11,23 @@ parts:
     - file: lesson/binary-code
     - file: lesson/computer-hardware
     - file: lesson/computer-software
+    - file: lesson/computer-circuits
+  - file: lesson/computer-history
+  - file: lesson/operating-system
+  - file: lesson/development-tools
+  - file: lesson/file-system
+  - file: lesson/process-management
+  - file: lesson/ipc
+  - file: lesson/text-based-user-interface
+    sections:
+    - file: lesson/command-line-format
+  - file: lesson/graphical-user-interface
+  - file: lesson/software-configuration
+  - file: lesson/software-distribution
+  - file: lesson/software-installation
+  - file: lesson/software-license
+  - file: lesson/programming-languages
+  - file: lesson/software-development
 
 - caption: Практические работы
   chapters:
