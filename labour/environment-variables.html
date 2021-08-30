@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с переменными среды &#8212; Системное и прикладное программное обеспечение</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Разбор аргументов программы" href="command-line-parse.html" />
+    <link rel="prev" title="Справочная система man" href="help-system.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Системное и прикладное программное обеспечение</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Об учебнике
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лекции
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lesson/computing-intro.html">
+   Введение в компьютеры
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/binary-code.html">
+     Двоичный код
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/computer-hardware.html">
+     Аппаратное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/computer-software.html">
+     Программное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/computer-circuits.html">
+     Цифровые узлы обработки данных
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/computer-history.html">
+   История развития вычислительной техники
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/operating-system.html">
+   Операционная система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/development-tools.html">
+   Инструментальные средства
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/file-system.html">
+   Файловая система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/process-management.html">
+   Управление процессами в ОС
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/ipc.html">
+   Межпроцессное взаимодействие
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lesson/text-based-user-interface.html">
+   Текстовый интерфейс пользователя
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/command-line-format.html">
+     Формат команд командной строки
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/graphical-user-interface.html">
+   Графический интерфейс пользователя
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-configuration.html">
+   Конфигурация программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-distribution.html">
+   Распространение программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-installation.html">
+   Установка программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-license.html">
+   Лицензии в программном обеспечении
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/programming-languages.html">
+   Языки программирования
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-development.html">
+   Разработка программного обеспечения
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Практические работы
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="create-virtual-machine.html">
+   Создание виртуальной машины
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="help-system.html">
+   Справочная система man
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Работа с переменными среды
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="command-line-parse.html">
+   Разбор аргументов программы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Презентации
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../report/intro.html">
+   О предмете
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/labour/environment-variables.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wolodyx/sppo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wolodyx/sppo/issues/new?title=Issue%20on%20page%20%2Flabour/environment-variables.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Работа с переменными среды из графической оболочки
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Работа с переменными среды из командной оболочки
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Какие бывают переменные среды
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Откуда загружаются переменные среды
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Работа с переменными среды в Си
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Работа с переменными среды<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Поведение программы может быть изменено через файл настройки.
+Наиболее распространенными форматами для таких файлов являются <code class="docutils literal notranslate"><span class="pre">xml</span></code>, <code class="docutils literal notranslate"><span class="pre">ini</span></code>, <code class="docutils literal notranslate"><span class="pre">json</span></code> и <code class="docutils literal notranslate"><span class="pre">yaml</span></code>.
+Но считывание с них данных требует от программы работы с файлом, лексический и синтаксический разбор текста.
+Вместо того, чтобы разрабатывать свою функцию считывания настроек, используют существующие программные библиотеки.
+Подключение библиотеки к проекту, ее изучение и использование требует времени.
+Для простых настроек эффективнее использовать другие средства — например переменные среды.
+Переменная среды представляет собой переменную, с которой связано значение.
+Имя и значение переменной заданы в текстовом виде.
+Они задаются или ОС, или пользователем.
+В соответствии с этим они бывают системными и пользовательскими.
+Переменные среды несут информацию для запускаемых программ и настраивают их поведение.</p>
+<div class="section" id="id2">
+<h2>Работа с переменными среды из графической оболочки<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Список доступных переменных можно просмотреть в графической оболочке ОС. В Windows 10 в поиске, рядом с кнопкой “Пуск”, наберите “Изменение системных переменных среды” или “Изменение переменных среды текущего пользователя”. Выбрав из списка предложенные пункты, появится диалоговое окно “Переменные среды”.</p>
+<div class="figure align-default" id="env-dialog">
+<img alt="../_images/env-dialog-os-windows.png" src="../_images/env-dialog-os-windows.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Диалоговое окно “Переменные среды”</span><a class="headerlink" href="#env-dialog" title="Permalink to this image">¶</a></p>
+</div>
+<p>В ранних версиях Windows это окно расположено в “Панели управления” -&gt; “Сведения о системе” -&gt; “Дополнительные параметры системы” -&gt; “Переменные среды”.
+На диалоговом окне размещены кнопки, позволяющие редактировать переменные — изменять, удалять и добавлять их.
+В нижней части окна представлены системные переменные.
+Они доступны всем пользователя ОС.
+Переменные в верхней части окна доступны текущему пользователю.</p>
+</div>
+<div class="section" id="id3">
+<h2>Работа с переменными среды из командной оболочки<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Командные оболочки ОС дают удобный способ работы с переменными среды.
+Мы рассмотрим две оболочки — bash в Ubuntu и cmd в Windows.
+Далее будут показаны команды для bash, а в скобке альтернативный вариант для cmd.</p>
+<p>Команда <code class="docutils literal notranslate"><span class="pre">printenv</span></code> (<code class="docutils literal notranslate"><span class="pre">set</span></code>) выводит на экран список всех переменных с их значениями.
+Каждая переменная выводится в формате name=value с новой строки.
+В случае с Windows, переменные отсортированы в алфавитном порядке.</p>
+<p>Чтобы посмотреть конкретную переменную, например, <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, выполните команду printenv PATH (set PATH).
+Команда set PATH выводит не только PATH, но и те переменные, названия которых начинаются с этого слова.
+Команда printenv не имеет такой встроенной функциональности.
+Но ее можно достичь, если воспользоваться командой grep — “printenv | grep PATH”.
+Такая комбинация позволяет лучше ориентироваться в выводе и искать нужную информацию.</p>
+<p>Значение переменной с именем var выводится командой echo <span class="math notranslate nohighlight">\(var (echo %var%).
+Конструкция \)</span>var (%var%) заменяется значением переменной var и будет использовать ниже, при расширении переменной новым значением.</p>
+<p>В ОС Windows имена переменных, как и файлов, не зависят от регистра, поэтому имена “OS”, “os”, “Os” обозначают одну и ту же переменную.
+Но в UNIX это уже не верно — имя переменной зависит от регистра.</p>
+<p>Команда export var=5 (set var=5) добавляет новую или перезаписывает существующую переменную var значением 5.</p>
+<p>Команда unset var (set var=) удаляет переменную var.</p>
+<p>Переменная среды может хранить не только значение, но и список значений.
+В списке значения друг от друга разделяются символом “:” (“;”).
+Например, переменная среды PATH содержит список путей к каталогам с исполняемыми файлами.
+На практике часто нужно добавить к ней новый путь:
+export PATH=$PATH:new/path (set PATH=%PATH%;new/path)</p>
+<p>Запускаемая программа наследует от родительского процесса его переменные среды.
+Родительским процессом может быть ОС, командная оболочка или любая другая запущенная программа.
+После завершения программы, ее переменные среды также теряются.
+Поэтому все изменения переменных сред, которые были проведены в командной оболочке, после ее завершения, будут утеряны.
+Но также, измененные в оболочке переменные среды, будут переданы запущенной из нее программе.
+Так, в параллельных на OpenMP программах количество потоков в параллельных секциях берется из переменной среды <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code>, если оно явно не задано пользователем.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">4</span>
+<span class="o">./</span><span class="n">my_parallel_program</span>
+</pre></div>
+</div>
+<p>Программа pwd, расположенная в каталоге /bin, используется для вывода на экран текущего каталога.
+Она, запущенная из разных оболочек с разными текущими каталогами, выведет на экран разный результат.
+Как pwd определяет текущий каталог?
+Текущий каталог программы хранится в системной переменной PWD.
+Программа pwd, запускаемая оболочкой, наследует ее переменные среды и выводит на экран содержимое PWD.
+А как же команда cd изменяет текущий каталог?
+Как она меняет содержимое переменной среды родительского процесса bash?
+Команда cd не могла бы этого делать, если она была внешней утилитой.
+Поэтому она является встроенной в bash командной — реализована в виде функции, которая меняет переменную среды у своей программы.</p>
+<p>При запуске оболочки bash, им наследуются не только системные переменные среды, но и переменные, описанные в файлах сценариев в /etc/profile и ~/.bash_profile.
+Если пользователю нужны специальные настройки для запускаемых им программ, он может их записать как переменные среды в файлах сценариев bash.
+При запуске bash, они будут добавлены к списку доступных переменных.</p>
+</div>
+<div class="section" id="id4">
+<h2>Какие бывают переменные среды<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>PWD (UNIX) — текущий каталог программы.
+PATH (UNIX, Windows) — список путей к каталогам исполняемых файлов. При запуске программы по имени, без абсолютного пути, программа сначала ищется в текущем каталоге, а затем последовательно в каталогах из PATH.
+HOME (UNIX), HOMEPATH, USERPROFILE (Windows) — путь к домашнему каталогу пользователя.
+HOSTNAME (UNIX), COMPUTERNAME (Windows) — имя компьютера.
+COMPSPEC (Windows), SHELL(Unix) — путь к исполняемому файлу командной оболочки.</p>
+</div>
+<div class="section" id="id5">
+<h2>Откуда загружаются переменные среды<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>ОС Windows системные переменные хранит в реестре в ветке Environment.
+Таких веток может быть несколько — для системы и каждого пользователя.
+Например HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment.</p>
+<p>В UNIX-подобных ОС системные переменные прописываются в файле /etc/environment.
+Системные программы (такие как командная оболочка bash, окружение рабочего стола unity, оконная система X Server и др.) добавляют в систему свои переменные, которые прописываются в их конфигурационных файлах.
+Для bash — это /etc/profile и /etc/bashrc.
+Те же системные программы определяют индивидуальные переменные среды для пользователей.
+Эти переменные прописываются в конфигурационных файлах в домашнем каталоге.
+Так, bash для этого использует файл ~/.bash_profile.</p>
+</div>
+<div class="section" id="id6">
+<h2>Работа с переменными среды в Си<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Взаимодействие с переменными среды в Си может быть выполнена тремя способами:</p>
+<ul class="simple">
+<li><p>стандартной библиотекой Си;</p></li>
+<li><p>внешней переменной environ из стандарта POSIX;</p></li>
+<li><p>через третий параметр основной функции main.</p></li>
+</ul>
+<p>Стандартная библиотека Си для получения значения переменной окружения по имени предлагает функцию из stdlib.h
+char <code class="docutils literal notranslate"><span class="pre">*getenv(const</span> <span class="pre">char</span> <span class="pre">*name)</span></code></p>
+<p>Пример программы, распечатывающий значение переменной PATH, выглядит следующим образом:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main(void)
+{
+    char *env_p = getenv(“PATH”);
+    if(env_p)
+        printf(“PATH = %s\n”, env_p);
+}
+</pre></div>
+</div>
+<p>Функция setenv устанавливает переменной envname значение envval.
+Флаг overwrite определяет, нужно ли перезаписать переменную, если она уже существует.
+int setenv(const char *envname, const char *envval, int overwrite);</p>
+<p>Функция putenv устанавливает переменную, заданную строкой в формате name=value:
+int putenv(char *string)</p>
+<p>Для удаления переменной, используется функция unsetenv:
+int unsetenv(const char *name);</p>
+<p>Все 4 рассмотренные функции — getenv, setenv, putenv, unsetenv — расположены в заголовочном файле stdlib.h.
+В случае успеха последний 3 функции возвращают нулевое значение.</p>
+<p>Основная функция main программы на Си имеет несколько прототипов. Один из них:
+<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">main(int</span> <span class="pre">argc,</span> <span class="pre">char</span> <span class="pre">*argv[],</span> <span class="pre">char</span> <span class="pre">*envp[])</span></code></p>
+<p>Здесь третий параметр envp — это массив указателей на переменные окружения в формате name=value. Размер массива явно не задан, но последний элемент в нем представлен как пустой указатель.
+Список переменных также доступна через внешнюю переменную extern char **environ;</p>
+<p>Последний элемент в этом массиве по аналогии выше, имеет нулевой указатель.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./labour"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="help-system.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Справочная система man</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="command-line-parse.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Разбор аргументов программы</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Лазарев В.В.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

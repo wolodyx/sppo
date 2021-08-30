@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>История развития вычислительной техники &#8212; Системное и прикладное программное обеспечение</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Операционная система" href="operating-system.html" />
+    <link rel="prev" title="Цифровые узлы обработки данных" href="computer-circuits.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Системное и прикладное программное обеспечение</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Об учебнике
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лекции
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="computing-intro.html">
+   Введение в компьютеры
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binary-code.html">
+     Двоичный код
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer-hardware.html">
+     Аппаратное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer-software.html">
+     Программное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer-circuits.html">
+     Цифровые узлы обработки данных
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   История развития вычислительной техники
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="operating-system.html">
+   Операционная система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="development-tools.html">
+   Инструментальные средства
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="file-system.html">
+   Файловая система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="process-management.html">
+   Управление процессами в ОС
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ipc.html">
+   Межпроцессное взаимодействие
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="text-based-user-interface.html">
+   Текстовый интерфейс пользователя
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="command-line-format.html">
+     Формат команд командной строки
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="graphical-user-interface.html">
+   Графический интерфейс пользователя
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-configuration.html">
+   Конфигурация программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-distribution.html">
+   Распространение программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-installation.html">
+   Установка программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-license.html">
+   Лицензии в программном обеспечении
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming-languages.html">
+   Языки программирования
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-development.html">
+   Разработка программного обеспечения
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Практические работы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/create-virtual-machine.html">
+   Создание виртуальной машины
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/help-system.html">
+   Справочная система man
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/environment-variables.html">
+   Работа с переменными среды
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/command-line-parse.html">
+   Разбор аргументов программы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Презентации
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../report/intro.html">
+   О предмете
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lesson/computer-history.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wolodyx/sppo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wolodyx/sppo/issues/new?title=Issue%20on%20page%20%2Flesson/computer-history.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Введение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Появление числа
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Первые вычислительные устройства
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Абак
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Палочки Непера
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Логарифмическая линейка
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Механическая счетная машина Шиккарда
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Суммирующая машина Паскаля
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Арифмометр Лейбница
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Перфокарты Жаккарда
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   Электромеханические вычислительные устройства
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   Электронные вычислительные устройства
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Электронные лампы
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   Развитие программного обеспечения
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   Использованные источники
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>История развития вычислительной техники<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Необходимость в расчетах у человечества была всегда.
+По мере развития цивилизации, их объемы только увеличивались.
+Они были нужны при измерении площади земельного участка, начислении и учета налогов, слежении за астрономическими циклами, обработке данных переписи населения, создании логарифмических и тригонометрических таблиц, в военной сфере, в бухгалтерском учете и финансово-статистическом анализе.
+Для удовлетворения потребностей в вычислениях, были разработаны различные устройства.
+Сложность этих устройств со временем возрастала, достигнув сегодня физических пределов — скорости света и размера атома.</p>
+</div>
+<div class="section" id="id3">
+<h2>Появление числа<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Простейшим приспособлением для облегчения счета можно назвать пальцы на руках.
+Дети используют их при складывании и вычитании чисел от одного до десяти.
+Количество пальцев ограничено и не хватит посчитать богатый улов.
+Для счета использовали легкодоступные небольшие однотипные предметы — камешки, ракушки, зарубки на палке, узелки на веревке.
+Они наглядно показывали количество скота, мешков с зерном, одолженных денег и позволяли планировать хозяйственную деятельность.
+Про унарную систему счисления.</p>
+<p>Про позиционную систему счисления.
+Сложение, вычитание и умножение многозначных чисел можно выполнить в уме или на бумаге.
+Индусы использовали десятичную систему счисления и им были известны быстрые методы умножения.
+От индусов эти знания передались арабам, а от них — европейцам.
+Если человек знаком с составом числа, знает таблицу умножения и приемы сложения и умножения, то он может в уме выполнить арифметические операции.
+Для облегчения счета промежуточные значения выписывали на бумаге (песке, пергаменте, глиняной или восковой табличке).</p>
+</div>
+<div class="section" id="id4">
+<h2>Первые вычислительные устройства<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Абак<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>С увеличением объемов хозяйственной деятельности камешки перестали быть удобным средством для учета и планирования.
+Оперирование в уме многозначными числами утомительно и подвержено ошибкам, а бумага была недоступна или стоила немалых денег.
+Появление абака решило проблему устного счета.
+Абак — это доска с параллельными углублениями и перемещающимися камешками в них.
+Предполагают, что он впервые появился в III тысячелетии до н.э. в Древнем Вавилоне.
+Оттуда он попал в другие страны — Китай, Японию, Римскую Империю, Египет, Западную Европу и известен под разными названиями.
+Ближним родственником абака в России являются русские счеты, появившиеся в XV-XVI веках.</p>
+<div class="figure align-default" id="id17">
+<img alt="../_images/abacus.jpg" src="../_images/abacus.jpg" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Римский абак</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>В абаке для представления числа используется позиционная пятеричная система счисления, а для кодирования цифр — унарная.
+На нем легко и быстро складывают и вычитают многозначные числа, но сложно и неочевидно — деление и умножение.
+Русские счеты в СССР использовались в торговле вплоть до конца XX века, пока их не вытеснили ставшие доступными карманные калькуляторы.</p>
+</div>
+<div class="section" id="id6">
+<h3>Палочки Непера<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>В научных вычислениях, особенно в астрономии, приходилось часто умножать, делить, извлекать квадратные и кубические корни из многозначных чисел, что неудобно выполнять на абаке.
+Шотландский математик Джон Непер предложил специальные счетные палочки, упрощающие умножение.</p>
+<div class="figure align-default" id="id18">
+<img alt="../_images/nepers-sticks.png" src="../_images/nepers-sticks.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Палочки Непера</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>Каждому числу от 0 до 9 соответствовала палочка, разделенная поперечными чертами на 9 квадратов.
+Каждый квадрат разделялся на два треугольника.
+Палочки вместе составляли таблицу умножения.
+Результат умножения записывался в квадрат — в верхний треугольник помещались десятки, а в нижний — единицы.
+Многозначное число складывалось из палочек, а его произведение на однозначное число считывалось из соответствующей строки.</p>
+</div>
+<div class="section" id="id7">
+<h3>Логарифмическая линейка<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Палочки Непера были в основном развлечением и не распространились широко.
+Но наибольшую популярность получило обнаружение Непером логарифмов и их свойств, которые позволили значительно ускорить умножение и деление многозначных чисел.
+Он обнаружил, что если величины образуют геометрическую прогрессию, то их логарифмы — арифметическую.
+Это позволило умножение приводить к более простому сложению, а деление — к вычитанию.
+Соответственно, извлечение квадратного и кубического корней приводились к делению на 2 и 3.
+В 1614 году он опубликовал свою работу — определение логарифма, описание его свойств и таблицу значений логарифмов тригонометрических функций.
+Его работы позволили значительно упростить астрономические вычисления.</p>
+<p>Для умножения чисел x и y используется свойство логарифмов log(xy)=log(x)+log(y).
+То есть, умножение чисел приводится к сложению их логарифмов.
+С использованием логарифмических таблиц, алгоритм умножения выглядел следующим образом.
+В таблицах ищутся логарифмы умножаемых чисел, которые затем складываются.
+По полученному значению — логарифму произведения, ищется в таблице само произведение.</p>
+<p>В 1620-х годах Эдмунд Уингейт и Уильям Отред предложили другой способ вычислений, но без таблиц, с использованием двух скользящих линеек, которая известна как логарифмическая линейка.
+Долгое время, до середины XX века, она служила основным инструментом для вычисления у инженеров.
+Числа на линейку нанесены в логарифмическом масштабе.
+[Умножение с помощью линейки].
+Линейка позволяет не только умножать и делить, но и возводить в степень и извлекать корни, вычислять тригонометрические функции.</p>
+<div class="figure align-default" id="id19">
+<img alt="../_images/slide-rule.jpg" src="../_images/slide-rule.jpg" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Логарифмическая линейка</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>Линейка относится к аналоговым вычислительным устройствам.
+Точность вычислений в ней ограничена тремя разрядами после запятой.
+Для точных вычислений используются цифровые устройства.
+Номограммы — аналоговые вычисления.</p>
+</div>
+<div class="section" id="id8">
+<h3>Механическая счетная машина Шиккарда<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Вильгельм Шиккард в 1623 г. придумал первое механическое счетное устройство для умножения с накоплением.
+Для умножения использовался метод столбиком, последовательно суммируя частичные произведения.
+Первый множитель устанавливался в верхних окошках, используя цилиндрические палочки Непера.
+Задвижки по бокам открывали окошки с результатами частичных произведений.
+Их суммирование с результатом выполнялось прокручиванием ручек снизу.
+Перенос разряда при переполнении происходил автоматически за счет системы шестеренок.
+Результаты умножения накапливались в нижнем суммирующем устройстве.</p>
+<div class="figure align-default" id="id20">
+<img alt="../_images/schickard-mechanical-calculator.jpg" src="../_images/schickard-mechanical-calculator.jpg" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Механическая счетная машина Шиккарда</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>Изобретение Шиккарда долгое время не было известно, пока в середине XX века не обнаружили чертежи из его писем Кеплеру.
+Неизвестно, изготовил ли изобретатель прототип.
+Но действующая модель собрана по чертежам и сейчас находится в доме-музее Кеплера.</p>
+</div>
+<div class="section" id="id9">
+<h3>Суммирующая машина Паскаля<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>В 1642 году 19-летний Блез Паскаль создал суммирующую машину, также известную как “Паскали́на”.
+Паскалина позволяла складывать и вычитать десятичные числа до 8 разрядов.
+Механизм представлял обычный счетчик оборотов, составленный из связанных 10-зубчатых колес.
+Провернутое на полный оборот колесо зацепляло соседнее и проворачивало его на один зубец, реализуя таким образом перенос разряда при переполнении.
+Колеса поворачивались только в одном направлении, что позволяло только суммировать.
+Поэтому для вычитания использовался дополнительный код — первое слагаемое в дополнительном коде складывалось со вторым слагаемым.
+Для сброса счетчики устанавливали на число 99999999 и к нему прибавляли 1.</p>
+<div class="figure align-default" id="id21">
+<img alt="../_images/pascaline.jpg" src="../_images/pascaline.jpg" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Суммирующая машина Паскаля</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id22">
+<img alt="../_images/pascaline-internal-device.png" src="../_images/pascaline-internal-device.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Внутреннее устройство машины Паскаля</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>Своим устройством Паскаль хотел облегчить работу отца, занимавшегося учетом собранных налогов.
+Паскаль изготовил около 50 устройств и смог продать несколько из них.
+Устройства не получили распространения в силу того, что денежная система Франции того времени имела недесятичную систему — один ливр состоял из 20 су, а один су из 12 денье.
+Но несмотря на это конструкция из связанных шестерен будет основой механических сумматоров будущего.</p>
+</div>
+<div class="section" id="id10">
+<h3>Арифмометр Лейбница<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>В 1673 году Готфрид Вильгельм Лейбниц изобрел конструкцию арифмометра, который был лучше, чем у Паскаля.
+Позволяла умножать, делить, складывать и вычитать в десятичной системе счисления.
+В его арифмометре использовался шаговый барабан, который долгое время стал основным элементом в более поздних арифмометрах.</p>
+<p>Лейбниц создал свое устройство, чтобы облегчить расчеты Христиану Гюйгенсу (астроном).</p>
+<p>Эти механические устройства не имели коммерческого успеха из-за сложности изготовления и слабых вычислительных способностей.
+Первым арифмометром, имевший успех, было выпущено в 1820 году французским изобретателем Тома.
+Его устройство продавалось в течение 90 лет.</p>
+<p>В России первый арифмометр разработал Чебышев в 1850 году.
+В СССР с 1929 по 1978 гг. выпускался арифмометр Феликс.
+Он применялся в расчетах, для проекта разработки атомного оружия — до того, как были созданы первые электрические вычислительные машины.</p>
+<p>Принцип действия арифмометра основан на механических элемента — зубчатых колесах и шаговом барабане.
+С их помощью умножение выполнялось как поразрядное сложение и сдвиг суммы частных производных.
+Для приведения в действие необходимо было вращать ручку.
+Для удобства, в некоторых моделях могли быть электромоторы.</p>
+</div>
+<div class="section" id="id11">
+<h3>Перфокарты Жаккарда<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Изобретение перфокарт Жаккардом (1808 г.) позволило создавать программируемые устройства.</p>
+<p>Арифмометры не были программируемыми устройствами.
+Первую попытку создать аналог современного ЭВМ была предпринята Чарльзом Бэббиджем в 1822 году.
+Его задачей была автоматизировать рутинные вычисления.
+Работа продолжалась до 1838 года и не увенчалась успехом.
+Аналитическая машина Бэббиджа стала прообразом современных компьютеров.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>Электромеханические вычислительные устройства<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>Следующий шаг — это электромеханические устройства, использующие вместо вращающихся устройств электромеханические реле.</p>
+<p>С появлением электричества появились табуляторы — программируемые электромеханические устройства для суммирования и категоризации.
+Использовались для автоматической обработки данных переписи населения, бухгалтерских и экономико-статистических расчетов.
+Табулятор Холлерита (1888=1890 гг.) — первое успешное коммерческое устройство.
+Производитель этого устройства далее будет переименован в IBM.</p>
+<p>Машина Z1 (1938 г.) немецкого изобретателя Конрада Цузе — первая программируемая вычислительная машина.
+Программа читалась из перфокарт, память вычислителя организована из конденсаторов, ввод осуществлялся с клавиатуры, для вывода использовалась панель из лампочек.
+тактовая частота 1 Гц, умножение выполнялось за 5 секунд.
+Далее были выпущены машины Z2, Z3.</p>
+<p>Марк I — машина разработки IBM по контракту с ВМС США во главе с Говардом Эйкеном.
+В обоих машинах отсутствовали циклы и условные переходы.
+В Марк 1 была использована гарвардская архитектура — программа и данные хранились отдельно.
+Машина заменяла труд 20 вычислителей.</p>
+</div>
+<div class="section" id="id13">
+<h2>Электронные вычислительные устройства<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Электронные лампы<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Если в электромеханических устройствах использовались реле с его подвижными элементами, то на следующем уровне произошел переход на вакуумные лампы.</p>
+<p>ЭНИАК (1945 г.) — ЭВМ на базе вакуумных ламп.
+Разрабатывался для расчета баллистических таблиц — поправок к прицелу с учетом различных факторов (скорости ветра, снаряда, угла стрельбы и т.п.).
+Но также использовался при разработке термоядерного оружия, предсказания погоды, инженерных расчетов.
+Вычислительная мощность — 357 операций умножения, 5000 операций сложения в секунду.
+Ввод и вывод осуществлялся через перфокарты.
+Вычисления проводились в десятичной системе.
+На его разработку было потрачено 17468 ламп, 7200 кремниевых диодов, 1500 реле, 70 тыс. резисторов, 10 тыс. конденсаторов.
+Проблемой был частый отказ ламп, что приводило к остановке машины.
+Среднее время наработки лампы было 2500 часов, и сгорало их 2-3 штуки в неделю.
+Безотказно машина работала 20 часов, что составляло месячный объем механических вычислений.
+К проекту ЭНИАК был подключен Джон фон Нейман.
+Он предложил принцип совместного хранения данных и команд программы в памяти компьютера, использование двоичной системы для хранения чисел, адресации памяти нумерованными ячейками, программа в виде последовательности команд, порядок следования которых зависит от результатов вычислений.</p>
+<p>Впервые архитектуру фон Неймана была реализована в машине EDSAC (1949 г.), созданную в Кембриджском университете.</p>
+<p>IBM Systems/360 (1964 г.) — линейка компьютеров (мейнфреймов) от IBM различной производительности.
+В этой линейке были введены 8-битный байт как минимально адресуемая ячейка памяти, шестнадцатеричная система счисления, совместимость ПО между разными моделями машин, технология микрокода.
+IBM разделила архитектуру и реализацию, и не стала патентовать идеи.
+Сторонние производители могли создавать дополнительные устройства к продукции IBM.</p>
+<p>Первые ЭВМ ЭНИАК была разработана на электронных лампах, которые заменили электромеханические реле.
+Устройства на лампах имели большое энергопотребление (15-150 кВт), малый ресурс наработки на отказ (несколько часов) и большие объемы.
+ЭВМ на лампах относятся к первому поколению.</p>
+<!-- Изобретение транзистора -->
+<p>Изобретенный в 1947 году транзистор стал заменой ламп.
+Транзисторы имели меньшие размеры, чем лампы и со временем становились еще меньше.</p>
+<!-- Надежность транзисторов -->
+<p>Несмотря на это не решилась проблему надежности.
+Наоборот, было сложно обнаружить неисправность из-за миниатюризации компонент.</p>
+<!-- БЭСМ-6 -->
+<p>В СССР лучшей ЭВМ второго поколения считается БЭСМ-6.
+Несмотря на уменьшение размеров и стоимости ЭВМ, они оставались доступны малому кругу лиц.
+Так как для их обслуживания все равно нужны были отдельные помещения с подготовленным персоналом.</p>
+<!-- Изобретение интегральной схемы -->
+<p>Компьютеры стали доступными только после изобретения интегральной схемы (1958-1959 года).
+Проблемы ЭВМ первого и второго поколения была в надежности.
+Они часто выходили из строя, не досчитав задачу.
+Большая часть времени тратилась в поисках ошибки в аппаратуре.
+Поэтому исследования были направлены на уменьшение количества элементов.
+И это было достигнуто интегральными схемами.
+ИС позволяет на одной подложке кремния объединить десятки и сотни, соединенных между собой транзисторов, резисторов и конденсаторов.</p>
+<!-- Предпосылки появления персонального компьютера -->
+<p>Толчком к появлению персонального компьютера стало появление на рынке коммерческих процессоров, реализованных в виде интегральной микросхемы.
+Не только процессор, но и остальные блоки компьютера стали размещать на микросхемах – генератор синхросигналов, контроллер монитора, управление последовательным интерфейсом и многое другое.
+Замена цифровых узлов компьютера на микросхемы резко повысила надежность и понизила стоимость компьютера.
+Компания Intel освоила в 1971 году выпуск первого микропроцессора i4004.
+Но успех пришел на третьем микропроцессоре – i8080, изготовленном в апреле 1974 года.
+Он имел успешный набор инструкций, позволяющий писать универсальные программы.
+16-битная шина данных позволяла адресовать до 64 Кб памяти, что было роскошью для того времени.
+Память была общей как для программы, так и для команд.
+Стек также размещался в общей памяти, позволяя составлять программы с рекурсивным вызовом функций.</p>
+<!-- Ориентация персональных компьютеров на бизнес -->
+<p>Цены на персональный компьютер были высокими, поэтому их могли позволить себе только компании.
+Для домашнего использования они были недоступными.</p>
+<!-- Intel 4004-->
+<div class="figure align-default" id="id23">
+<a class="reference internal image-reference" href="../_images/Intel-c4004.jpg"><img alt="../_images/Intel-c4004.jpg" src="../_images/Intel-c4004.jpg" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Микропроцессор Intel 4004</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<!-- Микропроцессоры i4004, i8008, i8080 -->
+<p>В 1971 году компания Intel разработала первый микропроцессор.
+Это был i4004 – микросхема с 46 инструкциями и внутренней 4-битной шиной данных.</p>
+<p>Следующим шагом стал 8-битный микропроцессор i8008.
+Но успех пришел на 8-битном микропроцессоре i8080, выпущенном в апреле 1974 года.
+Интегральная схема содержала в себе 4758 транзисторов.
+16-разрядная шина данных адресовывала до 64 Кб памяти.
+В этой памяти размещались и программа и данные.
+Стек также размещался в этой памяти, что позволял в программах выполнять рекурсивные вызовы функций.
+Микропроцессор содержал 80 инструкций, которые оказались удобными для написания универсальных программ.</p>
+<div class="figure align-default" id="id24">
+<a class="reference internal image-reference" href="../_images/Intel-c8080.jpg"><img alt="../_images/Intel-c8080.jpg" src="../_images/Intel-c8080.jpg" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Микропроцессор Intel 8080</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<!-- Комплекты для сборки компьютера -->
+<p>На основе микропроцессора Intel 8080 разработали дешевый и получивший успех миникомпьютер Altair 8800.
+Его распространяли в виде комплекта для сборки.
+Благодаря этому компьютеру, обычные люди могли прикоснуться к компьютерам.
+В городах появлялись компьютерные клубы.
+Altair не имел ни клавиатуры, ни монитора.
+Ввод данных осуществлялся через тумблеры, а вывод считывался по лампочкам на передней панели.</p>
+<div class="figure align-default" id="id25">
+<img alt="../_images/Altair-8800.jpg" src="../_images/Altair-8800.jpg" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Компьютер Altair 8800</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<!-- Фирменные компьютеры -->
+<p>Первым доступным персональным компьютером стал Altair 8800, появившийся в 1975 году.
+Он распространялся в готовом виде за 621 доллар, а также как комплект для сборки за 439 долларов.</p>
+<p>Первые массовые компьютеры появились в 1977 году.
+Это Apple II, Commodore PET.</p>
+<p>1983 год. Персональный компьютер с графическим интерфейсом. Apple Lisa, Apple Macintosh.</p>
+<!-- IBM PC (IBM 5150) -->
+<!-- История создания IBM 5150 -->
+<p><a class="reference external" href="https://www.crn.ru/numbers/reg-numbers/detail.php?ID=11621">https://www.crn.ru/numbers/reg-numbers/detail.php?ID=11621</a>
+Рынок был готов к персональным компьютерам. Снижение цены из-за конкуренции. Заполнили весь мир.</p>
+<!-- Используемые стандарты -->
+<p>Интерфейсы PCI,
+BIOS (UEFI), PCI-шина, x86-совместимый процессор.
+Форм-фактор ATX.
+Совместимость аппаратного обеспечения.
+Совместимость программного обеспечения.
+Отраслевой стандарт для персональных компьютеров.</p>
+<div class="figure align-default" id="id26">
+<a class="reference internal image-reference" href="../_images/IBM-PC.png"><img alt="../_images/IBM-PC.png" src="../_images/IBM-PC.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Персональный компьютер IBM 5150 (IBM PC)</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<!-- Новая бизнес-модель -->
+<p>Четвертое поколение компьютеров появилось после создания центрального процессора на одном кристалле — микропроцессор.
+Микропроцессор объединил в себе множество ИС.
+Количество компонент уменьшилось еще больше.
+Intel выпустил первый микропроцессоров в 1971 году под названием Intel 4004.
+Такой микропроцессор позволили создать компьютер, помещающийся на письменном столе.</p>
+<p>При высокой стоимости ЭВМ его могли себе приобрести только государственные и финансовые структуры.
+Научно-исследовательские институты для решения уравнений математической физики, конструкторские бюро для инженерных расчетов, государственные хозяйственные структуры для обработки данных переписи населения, финансовых и статистических расчетов.
+Но по мере удешевления стоимости компьютера за счет массового выпуска комплектующих, взаимозаменяемости частей, она становилась доступным широкому кругу населения.
+Появляется потребность в различном ПО.
+Это стимулирует его разработку.</p>
+<p>В 1960-х годах компьютеры стали доступнее за счет работы на них в режиме разделения времени.
+К компьютерам могли получать доступ учащиеся и специалисты, не являющиеся подготовленными программистами, но нуждающиеся в решении на компьютере своих задач.</p>
+<p>Распространение персональных компьютеров уменьшило спрос на мейнфреймы IBM/ Компания решила попробовать свои силы в производстве ПК.
+Она разработала устройство на тогда новом микропроцессоре Intel 8088.
+Его 16-разрядная адресация позволила работать с 1 Мб памяти, что превосходило 64 Кб у конкурентов.
+Для уменьшения себестоимости, в компьютере были использованы комплектующие других производителей.
+пО было поручено разработать фирме Microsoft.
+Новый компьютер был продемонстрирован в 1981 году под шифром IBM 5150.
+Она приобрела большую популярность и стала стандартом персонального компьютера (совместимые с IBM PC).</p>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>Развитие программного обеспечения<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>Программа в машину заносилась через перфорированную ленту (в Z3, Mark I) или перекоммутацией проводов (на ранней версии Эниак).
+Такая программа не позволяла организовать условные переходы и циклы.
+Если была необходимость в цикле, то перфолента просто замыкалась.</p>
+<p>Преимущество перфорированных карт между лентой была в возможности перестановки информации, редактировании только части информации.
+Карты объединялись вместе и образовывали перфоленту.
+По сравнению с картами, лента часто рвалась.
+Далее перфорированные ленты были заменены магнитными, у которых уже был более высокая скорость ввода-вывода.
+Запись была механической — пробиванием отверстий и имела скорость до 80-150 байт в секунду.
+Считывание было оптическим и имело скорость до 1500 байтов в секунду.</p>
+<p>Раздельное хранение программы и данных задачи, а также физическое разделение каналов их передачи называется гарвардской архитектурой и была впервые применена в Марк 1 Говардом Эйкеном.
+Преимущество такой архитектуры — более высокая скорость выполнения программы за счет независимой загрузки данных и программы.</p>
+<p>На основе анализа недостатков ранней версии Эниак, разработчики Эккерт и Мокли предложили хранить программу вместе с данными.
+Джон фон Нейманом опубликовал отчет, в котором предложил другой принцип организации машины.
+Это будут называть архитектурой фон Неймана.</p>
+<p>Использование компьютерного терминала позволило получать удаленный доступ к вычислительной машине.
+В терминале были соединены устройство ввода и вывода.
+Для ввода данных использовалась клавиатура, а для вывода — дисплей.
+На стороне машины нужна была вспомогательная программа, которая бы обрабатывала команды от пользователя.
+Таким программами стали операционные системы.</p>
+<p>Разработка программ в машинных кодах было неэффективным занятием.
+Изначально программа представляла собой двоичные символы, набираемые перфорацией.
+Для упрощения написания программ, целочисленные коды команд начали заменять символьными обозначениями.
+Транслятор преобразовывал их в машинные коды.
+Так появился язык ассемблера.
+Далее начали появляться языки программирования высокого уровня, некоторые из которых дошли до наших дней.</p>
+</div>
+<div class="section" id="id16">
+<h2>Использованные источники<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BE%D0%B2">История персональных компьютеров</a></p></li>
+<li><p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8">История вычислительной техники</a></p></li>
+<li><p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%BE%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8">Хронология развития вычислительной техники</a></p></li>
+<li><p><a class="reference external" href="https://www.nkj.ru/archive/articles/19204/">Решетчатое умножение</a></p></li>
+<li><p><a class="reference external" href="https://alexanderskulikov.github.io/files/algorithms_printable.pdf">Пролог. Книги и алгоритмы</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=3h71HAJWnVU">https://www.youtube.com/watch?v=3h71HAJWnVU</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lesson"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="computer-circuits.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Цифровые узлы обработки данных</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="operating-system.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Операционная система</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Лазарев В.В.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

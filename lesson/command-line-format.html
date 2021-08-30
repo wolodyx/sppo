@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Формат команд командной строки &#8212; Системное и прикладное программное обеспечение</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Графический интерфейс пользователя" href="graphical-user-interface.html" />
+    <link rel="prev" title="Текстовый интерфейс пользователя" href="text-based-user-interface.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Системное и прикладное программное обеспечение</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Об учебнике
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лекции
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="computing-intro.html">
+   Введение в компьютеры
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binary-code.html">
+     Двоичный код
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer-hardware.html">
+     Аппаратное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer-software.html">
+     Программное обеспечение
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer-circuits.html">
+     Цифровые узлы обработки данных
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="computer-history.html">
+   История развития вычислительной техники
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="operating-system.html">
+   Операционная система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="development-tools.html">
+   Инструментальные средства
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="file-system.html">
+   Файловая система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="process-management.html">
+   Управление процессами в ОС
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ipc.html">
+   Межпроцессное взаимодействие
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="text-based-user-interface.html">
+   Текстовый интерфейс пользователя
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Формат команд командной строки
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="graphical-user-interface.html">
+   Графический интерфейс пользователя
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-configuration.html">
+   Конфигурация программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-distribution.html">
+   Распространение программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-installation.html">
+   Установка программного обеспечения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-license.html">
+   Лицензии в программном обеспечении
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming-languages.html">
+   Языки программирования
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-development.html">
+   Разработка программного обеспечения
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Практические работы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/create-virtual-machine.html">
+   Создание виртуальной машины
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/help-system.html">
+   Справочная система man
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/environment-variables.html">
+   Работа с переменными среды
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labour/command-line-parse.html">
+   Разбор аргументов программы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Презентации
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../report/intro.html">
+   О предмете
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lesson/command-line-format.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wolodyx/sppo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wolodyx/sppo/issues/new?title=Issue%20on%20page%20%2Flesson/command-line-format.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Вопросы для самоконтроля
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Формат команд командной строки<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Команда, отправляемая интерпретатору на исполнение, представлена строкой из печатных символов.
+Она разделена пробельными символами (пробел или табуляция) на слова.
+Эти слова называют <em>аргументами командной строки</em>.
+Первый аргумент определяет название команды, а остальные задают ее входные данные и называются <em>аргументами команды</em>.</p>
+<!-- more -->
+<p>Аргументы команды делятся на опции и <em>свободные аргументы</em>.
+Порядок аргументов такой, что сначала идут опции и только затем свободные аргументы.
+Но на практике этот порядок может нарушаться.
+Поэтому некоторые программные средства разбора аргументов сортируют их, чтобы привести порядок к нормальному виду.</p>
+<p>Свободные аргументы указывают команде на данные, которые будут обрабатываться.
+Обычно это файлы и строки.
+Если ничего не указано, то некоторые команды ожидают ввода данных от пользователя.
+Чтобы указать команде, что ввод окончен, используют комбинацию клавиш <code class="docutils literal notranslate"><span class="pre">Ctrl-D</span></code>.</p>
+<p>Опции настраивают поведение команды.
+Например, настраивают отображение на экран для утилит просмотра и редактирования текста – выбор кодировки символов, нумерация строк (опция <code class="docutils literal notranslate"><span class="pre">-N</span></code> в утилите <code class="docutils literal notranslate"><span class="pre">less</span></code>), синтаксическая подстветка (опция <code class="docutils literal notranslate"><span class="pre">-Y</span></code> в утилите <code class="docutils literal notranslate"><span class="pre">nano</span></code>).
+Или меняют режим работы команды, например, открытие файла редактором только для чтения (опция <code class="docutils literal notranslate"><span class="pre">-R</span></code> в утилите <code class="docutils literal notranslate"><span class="pre">vim</span></code>), поиск строки в тексте без учета регистра (опция <code class="docutils literal notranslate"><span class="pre">-i</span></code> утилиты <code class="docutils literal notranslate"><span class="pre">grep</span></code>).</p>
+<p>Таким образом, опции указывают команде как обрабатывать, а аргументы – что обрабатывать.</p>
+<p>Как мы заметили выше, опции разделяются от свободных аргументов не только расположением, но и дефисом перед их имененм.
+Дефис более надежное средство для визуального различения опций.
+Если в имени опции только один символ, то опцию называют <em>короткой</em>.
+Существуют также <em>длинные опции</em> с подробными именами.
+Если в имени длинной опции более одного слова, то они разделяются дефисом, как например <code class="docutils literal notranslate"><span class="pre">--line-numbers</span></code>, <code class="docutils literal notranslate"><span class="pre">--log-file</span></code>, <code class="docutils literal notranslate"><span class="pre">--file-type</span></code>.
+Длинные опции, в отличие от коротких, начинаются с двух тире.</p>
+<p>Принято, чтобы короткая опция обязательно имела синоним в виде длинной опции.
+Когда нужно быстро набрать команду, используют короткие опции.
+Если необходима удобочитаемость, то выбирают длинные опции.
+Также существуют длинные опции с одним дефисом, как например в команде <code class="docutils literal notranslate"><span class="pre">find</span></code>.
+Но обычно в командах не смешивают разные типы длинных опций.</p>
+<p>Опция может иметь аргумент.
+Такой аргумент называют <em>зависимым</em>.
+Зависимый аргумент отделяется от имени опции пробелом (<code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">20</span></code> или <code class="docutils literal notranslate"><span class="pre">--max-count</span> <span class="pre">20</span></code>).
+Для длинных опций аргумент может идти за знаком <code class="docutils literal notranslate"><span class="pre">=</span></code> (<code class="docutils literal notranslate"><span class="pre">--max-count=20</span></code>).
+Если опция короткая, то параметр может начинаться сразу за именем опции (<code class="docutils literal notranslate"><span class="pre">-m20</span></code>).</p>
+<p>Опция может требовать присутствие аргумента или быть без аргумента.
+Опция без аргумента называют <em>флагом</em>.
+Но есть третий случай – опция с необязательным аргументом.
+Например <code class="docutils literal notranslate"><span class="pre">--color</span></code> в утилите <code class="docutils literal notranslate"><span class="pre">ls</span></code> использует цвет, чтобы различать типы файлов.
+Часто раскраска уже включена по умолчанию.
+И если необходимо ее отключить, то используют ту же опцию, но с аргументом: <code class="docutils literal notranslate"><span class="pre">--color=never</span></code>.</p>
+<p>Короткие опции без аргумента можно объединить под одним дефисом.
+Это удобно, когда надо быстро набрать команду.
+Так, <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span> <span class="pre">-l</span> <span class="pre">-h</span></code> эквивалентна <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-alh</span></code>.</p>
+<p>Если аргумент состоит из разделенных пробелами слов, то его помещают в кавычки.
+Иначе он разобъется на отдельные аргументы.
+Пробел часто встречается в путях к пользовательским файлам.
+Например, это каталоги <code class="docutils literal notranslate"><span class="pre">Рабочий</span> <span class="pre">стол</span></code>, <code class="docutils literal notranslate"><span class="pre">VirtualBox</span> <span class="pre">VMs</span></code>, <code class="docutils literal notranslate"><span class="pre">Мои</span> <span class="pre">проекты</span></code>.
+Пробельный символ допустим в названиях файлов, но он доставляет неудобства в оформлении аргументов командной строки.
+Поэтому в названиях системных файлов, каталогов, файлов с проектами программ пробел заменяют на символы дефиса (<code class="docutils literal notranslate"><span class="pre">-</span></code>) или подчеркивания (<code class="docutils literal notranslate"><span class="pre">_</span></code>).</p>
+<p>Одна опция в одной строке может встретиться несолько раз, но разными аргументами.
+В таком случае поведение команды зависит от того, будет ли опция взаимоисключающей.
+Если да, то последняя из них перекроет остальные.
+Если нет, то их аргументы объединятся.</p>
+<p>Одна опция может иметь несколько зависимых аргументов.
+Чтобы передать их в опцию, они обрамляются кавычками, а внутри получившейся строки разделяются пробелом или запятой, как например (нужен реальный пример):</p>
+<p><code class="docutils literal notranslate"><span class="pre">-u&quot;size,format,type&quot;</span></code>
+<code class="docutils literal notranslate"><span class="pre">-u&quot;size</span> <span class="pre">format</span> <span class="pre">type&quot;</span></code></p>
+<p>Символ дефиса для выделения опций среди аргументов выбран не случайно.
+Он редко встречается в начале названия файлов.
+Но как быть, если все-таки такой файл встретится? Специальный аргумент командной строки вида <code class="docutils literal notranslate"><span class="pre">--</span></code> явно указывает на конец перечисления опций.
+После него идут только свободные аргументы.
+Его используют, когда название файла похоже на опцию.
+Например, чтобы создать каталог с именем <code class="docutils literal notranslate"><span class="pre">--version</span></code> и перейти на него, получится только так:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">--</span> <span class="pre">--version</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">--</span> <span class="pre">--version</span></code></p>
+<p>Без аргумента <code class="docutils literal notranslate"><span class="pre">--</span></code> здесь не обойтись, так как иначе команды <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">--version</span></code> и <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">--version</span></code> выведут на экран свои номера версий.</p>
+<p>Специальный аргумент вида <code class="docutils literal notranslate"><span class="pre">-</span></code> в зависимости от команды рассматривается как стандартный ввод (клавиатура) или вывод (экран).
+(Пример).</p>
+<p>Перечисленные выше правила использовани аргументов командной строки выработались на практике в течение долгого времени.
+Правила перечислены в стандарте POSIX в виде соглашений.
+Так, стандарт ограничивает название команд от 2 до 9 строчными и цифровыми символами.
+Имя опций может содержать только буквы и цифры.
+Но не может состоять исключительно из цифр.
+Набирать только строчные буквы удобно только потому, что не надо тянуть мизинчик к клавише <code class="docutils literal notranslate"><span class="pre">shift</span></code>.
+Да и короткие имена быстрее набираются.
+Но соглашения не обязательны для выполнения.
+Их можно нарушить, но это будет себе дороже.
+Мало кто читал соглашения POSIX, но многие догадываются о них, так как они реализованы в большинстве утилит.
+Поэтому их нарушение только оттолкнет пользователей от программы.
+Но все же правила нарушаются.
+Например, нестандартные опция <code class="docutils literal notranslate"><span class="pre">+x</span></code> в команде <code class="docutils literal notranslate"><span class="pre">chmod</span></code>.
+Но это связано тем, что такие команды появились раньше, чем были приняты соглашения.</p>
+<p>Команды (утилиты командной строки в встроенные в интерпретатор) спроектированы таким образом, что они хорошо решают небольшую задачу.
+Название команды говорит нам об этой задаче.
+Именно поэтому ОС UNIX содержит большое количество разнообразных утилит.
+Вы их можете увидеть в каталогах <code class="docutils literal notranslate"><span class="pre">/bin</span></code>, <code class="docutils literal notranslate"><span class="pre">/sbin</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/sbin</span></code> командой <code class="docutils literal notranslate"><span class="pre">ls</span></code>.
+Но существуют особые многофункциональные утилиты.
+Они решают множество разнообразных задач, но в определенной узкой области.
+Например, это утилиты <code class="docutils literal notranslate"><span class="pre">ip</span></code>, … для настройки сети и утилиты <code class="docutils literal notranslate"><span class="pre">hg</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span></code> для управления версиями документов.
+рассмотрим команду и связанную с ней утилиту <code class="docutils literal notranslate"><span class="pre">git</span></code>.
+<code class="docutils literal notranslate"><span class="pre">Git</span></code> предоставляет десятки команд для просмотра и управления изменениями документов.
+Это команды <code class="docutils literal notranslate"><span class="pre">clone</span></code>, <code class="docutils literal notranslate"><span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">diff</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code> и многое другое.
+Все они встроены водну команду <code class="docutils literal notranslate"><span class="pre">git</span></code> и имет формат для вызова:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">command</span> <span class="pre">[options][args]</span></code></p>
+<p>Чтобы зафиксировать изменения в истории проекта используется строк <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Change</span> <span class="pre">description&quot;</span></code>.
+Здесь мы видим особый аргумент действия.
+Если выше действие указывалось в названии команды (в виде глагола), то тут команда – это азвнаие инструмента (в виде существительного).</p>
+<p>Аналогично обстоят дела с утилитой <code class="docutils literal notranslate"><span class="pre">ip</span></code> для настройки сети.
+Но в отличие от <code class="docutils literal notranslate"><span class="pre">git</span></code>, здесь мы увидим двухуровневый выбор действия.
+Формат вызова команды представлен в виде</p>
+<p><code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">[options]</span> <span class="pre">object</span> <span class="pre">action</span></code></p>
+<p>(Подробнее про команду <code class="docutils literal notranslate"><span class="pre">ip</span></code>).
+Чтобы посмотреть список локальных сетевых интерфейсов используется команда <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">addr</span> <span class="pre">show</span></code>.</p>
+<p>Зарезервированная опция <code class="docutils literal notranslate"><span class="pre">-W</span></code>.</p>
+<div class="section" id="id2">
+<h2>Вопросы для самоконтроля<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Посмотрите рисунок ниже и перечислите на ней термины, которые были введены в этой лекции.</p></li>
+<li><p>Команда <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">dir</span></code> создает каталог под названием <code class="docutils literal notranslate"><span class="pre">dir</span></code> в текущем каталоге.
+Создайте каталог с названиями <code class="docutils literal notranslate"><span class="pre">--help</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">$</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
+<li><p>Как вызовите программу из командной строки в названии которого (<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code>) есть пробел?</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lesson"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="text-based-user-interface.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Текстовый интерфейс пользователя</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="graphical-user-interface.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Графический интерфейс пользователя</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Лазарев В.В.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
