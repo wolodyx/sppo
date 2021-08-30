@@ -376,3 +376,4 @@ Intel выпустил первый микропроцессоров в 1971 г�
 * [Решетчатое умножение](https://www.nkj.ru/archive/articles/19204/)
 * [Пролог. Книги и алгоритмы](https://alexanderskulikov.github.io/files/algorithms_printable.pdf)
 * https://www.youtube.com/watch?v=3h71HAJWnVU
+* [How the Pascaline Works](https://www.youtube.com/watch?v=3h71HAJWnVU)
