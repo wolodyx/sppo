@@ -29,7 +29,7 @@ parts:
   - file: lesson/programming-languages
   - file: lesson/software-development
 
-- caption: Практические работы
+- caption: Практические занятия
   chapters:
   - file: labour/create-virtual-machine
   - file: labour/help-system
