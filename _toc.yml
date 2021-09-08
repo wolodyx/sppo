@@ -8,6 +8,8 @@ parts:
   chapters:
   - file: lesson/computing-intro
     sections:
+    - file: lesson/computer-in-life
+    - file: lesson/computer-substance
     - file: lesson/binary-code
     - file: lesson/computer-hardware
     - file: lesson/computer-software
@@ -32,6 +34,7 @@ parts:
 - caption: Практические занятия
   chapters:
   - file: labour/create-virtual-machine
+  - file: labour/view-edit-text
   - file: labour/help-system
   - file: labour/environment-variables
   - file: labour/command-line-parse
