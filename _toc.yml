@@ -4,32 +4,39 @@ format: jb-book
 root: intro
 
 parts:
-- caption: Лекции
+- caption: Введение
   chapters:
-  - file: lesson/computing-intro
-    sections:
-    - file: lesson/computer-in-life
-    - file: lesson/computer-substance
-    - file: lesson/binary-code
-    - file: lesson/computer-hardware
-    - file: lesson/computer-software
-    - file: lesson/computer-circuits
-  - file: lesson/computer-history
+  # - file: lesson/computing-intro
+  #   sections:
+  - file: lesson/computer-in-life
+  #   - file: lesson/computer-substance
+  - file: lesson/binary-code
+  - file: lesson/computer-hardware
+  - file: lesson/computer-software
+  #   - file: lesson/computer-circuits
+  # - file: lesson/computer-history
+
+- caption: Операционная система
+  chapters:
   - file: lesson/operating-system
   - file: lesson/development-tools
   - file: lesson/file-system
   - file: lesson/process-management
+- caption: Связь с программами
+  chapters:
   - file: lesson/ipc
   - file: lesson/text-based-user-interface
     sections:
     - file: lesson/command-line-format
   - file: lesson/graphical-user-interface
-  - file: lesson/software-configuration
-  - file: lesson/software-distribution
-  - file: lesson/software-installation
+- caption: Разработка программ
+  chapters:
   - file: lesson/software-license
   - file: lesson/programming-languages
   - file: lesson/software-development
+  - file: lesson/software-configuration
+  - file: lesson/software-distribution
+  - file: lesson/software-installation
 
 - caption: Практические занятия
   chapters:
