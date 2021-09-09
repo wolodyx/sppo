@@ -341,7 +341,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   Введение
+   Про текстовые данные и файлы
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -377,12 +377,33 @@
                 
   <div class="section" id="id1">
 <h1>Просмотр и редактирование текста<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Работа с текстовыми файлами относится к основным операциям при работе с компьютером.
+В них хранят:</p>
+<ul class="simple">
+<li><p>справочную информацию;</p></li>
+<li><p>конфигурационные файлы;</p></li>
+<li><p>исходные коды программ;</p></li>
+<li><p>файлы регистрации, также известны как логи;</p></li>
+<li><p>размеченные данные (yaml, json, xml, html, rtf).</p></li>
+</ul>
+<p>Файлы просматривают, в них ищут информацию, редактируют: удаляют, меняют и добавляют символы.
+Для чтения текстового файла используют программы просмотра (viewer по-английски), а для изменения – текстовые редакторы.
+Эти программы следует отличать друг от друга.</p>
+<p>Программа просмотра не имеют такой функциональности, что составляет редактор.
+Поэтому их внутреннее устройство намного проще и они производительнее в работе.
+Очевидно, что редакторы можно использовать для просмотра текстового файла.
+Можно подстраховаться от случайных изменений, открыв файл в режиме “только для чтения”.
+Но если вам нужно просматривать большие файлы и искать в них данные, то лучше воспользоваться программой просмотра.</p>
 <div class="section" id="id2">
-<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Про текстовые данные и файлы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Файлы по содержимому делятся на два типа – текстовые и двоичные.
 Двоичные файлы содержат любые значения, а текстовые только те, которые воспринимаются как печатные символы.</p>
-<p>В текстовых данных встречаются <em>управляющие символы</em>, которые не отображаются при чтении, но управляют размещением текста.
-<em>Символ перевода строки</em> переносит последующие отображаемые символы на новую строку.
+<p>В текстовых данных встречаются <em>управляющие символы</em>, которые не отображаются при чтении, но управляют размещением текста:</p>
+<ul class="simple">
+<li><p>символ перевода строки;</p></li>
+<li><p>табуляция.</p></li>
+</ul>
+<p><em>Символ перевода строки</em> переносит последующие отображаемые символы на новую строку.
 Для разных ОС он разный:</p>
 <ul class="simple">
 <li><p>UNIX    – <code class="docutils literal notranslate"><span class="pre">LF</span></code>;</p></li>
@@ -393,35 +414,18 @@
 Если строка не содержит символов, то ее называют <em>пустой</em>.</p>
 <p>Управляющий <em>символ табуляции</em> <code class="docutils literal notranslate"><span class="pre">HT</span></code> (0x9) перемещает следующий за ним символ к ближайшей колонке, кратной 8.
 С помощью него выравнивают столбцы в таблицах.</p>
-<p>Работа с текстовыми файлами относится к основным операциям при работе с компьютером.
-В них хранят:</p>
-<ul class="simple">
-<li><p>справочную информацию;</p></li>
-<li><p>конфигурационные файлы;</p></li>
-<li><p>исходные коды программ;</p></li>
-<li><p>логи;</p></li>
-<li><p>размеченные данные (yaml, json, xml, html, rtf).</p></li>
-</ul>
-<p>Файлы просматривают, в них ищут информацию, редактируют: удаляют, меняют и добавляют символы.
-Для чтения текстового файла используют программы просмотра (viewer по английски), а для изменения – текстовые редакторы.
-Эти программы следует различать друг от друга.</p>
-<p>Программа просмотра не имеют той многой функциональности, что составляет редактор.
-Поэтому их внутреннее устройство намного проще и более производительнее в работе.
-Очевидно, что редакторы можно использовать для просмотра текстового файла.
-Можно подстраховаться, открыв файл в режиме “только для чтения”.
-Но если вам нужно смотреть и искать в файлах с большим размером, то лучше воспользоваться программой просмотра.</p>
-<p>Текстовые данные обладают некоторой структурой, упорядывающей содержимое.
-Она отличается для разных типов данных.
+<p>Текстовые данные обладают некоторой структурой, упорядочивающей содержимое.
+Она различна для разных типов данных.
 Тип данных обычно указывается в <em>расширении файла</em> – части имени файла, идущей за последней точкой.</p>
 <p>Текстовый документ содержит читаемый текст и имеет расширение файла <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.
-Такой текст называют <em>плоским</em> (plan text).
+Такой текст называют <em>плоским</em> (plain text).
 Символы в документах объединяются в слова, а слова в предложения.
 Слова разделяются друг от друга пробелами, а предложения – точкой и последующим пробелом.
 Предложения объединяются в абзацы.
 Абзацы разделяются пустыми строками.</p>
 <p>Иная структура в исходных кодах программ.
 Их содержимое следует правилам, которые обговаривает синтаксис языка программирования.
-Слова разделяются на переменные, названия функций, операторы, ключевые слова, строки.
+Слова разделяются на переменные, названия функций, операторы, ключевые слова, строковые значения.
 Их можно выделить визуально разными цветами.
 Это называют <em>подсветкой синтаксиса</em>.
 Слова в исходных кодах группируются не в предложения и абзацы, а в блоки кода, вызовы функций, объявления переменных, комментарии.</p>
@@ -441,7 +445,7 @@
 </div>
 <div class="section" id="less">
 <h2>Утилита less<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h2>
-<p>Утилита используется для просмотра и поиска в текстовых файлах.
+<p>Утилита <code class="docutils literal notranslate"><span class="pre">less</span></code> используется для просмотра и поиска в текстовых файлах.
 Она работает быстро с очень большими файлами за счет того, что загружает данные пофрагментно по мере необходимости.</p>
 <p>Утилита <code class="docutils literal notranslate"><span class="pre">less</span></code> из командной строки вызывается командой:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>less <span class="o">[</span>опции<span class="o">]</span> filename
@@ -455,7 +459,7 @@
 <p>Опция <code class="docutils literal notranslate"><span class="pre">-s</span></code> убирает незаполненное пространство между строками, заменяя подряд идущие пустые строки одной пустой строкой.</p>
 <p>По умолчанию строки, не помещающиеся в одну строку, переносятся на следующую строку.
 Опция <code class="docutils literal notranslate"><span class="pre">-S</span></code> “срезает” длинные строки.</p>
-<p>Если известен номер интересующей строки в файле, то опция <code class="docutils literal notranslate"><span class="pre">-N</span></code> включит нумерацию строк.</p>
+<p>Если пользователю интересуют номера строк, то опция <code class="docutils literal notranslate"><span class="pre">-N</span></code> отобразит их слева от строк.</p>
 <p>По умолчанию поиск учитывает регистр символа.
 Изменить это позволяет опция <code class="docutils literal notranslate"><span class="pre">-i</span></code>, которая включит регистронезависимый поиск.</p>
 <!-- | Опция | Действие |
@@ -466,7 +470,7 @@
 | `-S` | Срезает длинные строки, вместо их переноса на следующую строку. | -->
 <p>Поиск и навигация выполняется посредством текстовых команд, набираемых с клавиатуры.
 Это удобнее, чем использовать мышь и клавиши для управления курсором.</p>
-<p>Чтобы закрыть просмотр наберите команду <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>Чтобы завершить просмотр файла, наберите команду <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Если клавиша <code class="docutils literal notranslate"><span class="pre">q</span></code> не закрывает просмотр, переключите раскладку клавиатуры на английскую.</p>
@@ -510,28 +514,27 @@
 </table>
 <p>Команда может быть выполнена несклько раз, если перед ней набрать число повтора.
 Например, 5j переместит экран на 5 строк вниз.</p>
-<p>Поиск – следующая важная функция <code class="docutils literal notranslate"><span class="pre">less</span></code> кроме просмотра.
-Фраза для поиска вводят после команды <code class="docutils literal notranslate"><span class="pre">/</span></code> и заканчивают нажатием <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
+<p>Следующая функция <code class="docutils literal notranslate"><span class="pre">less</span></code> – поиск.
+Фразы для поиска вводят после команды <code class="docutils literal notranslate"><span class="pre">/</span></code> и заканчивают нажатием <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
 Найденные символы в строке подсвечиваются.
 Перемещением по ним происходит по нажатию на <code class="docutils literal notranslate"><span class="pre">Enter</span></code> (или <code class="docutils literal notranslate"><span class="pre">n</span></code>).
 Команда <code class="docutils literal notranslate"><span class="pre">N</span></code> выполняет поиск в обратном направлении (наверх).
-Если фраза для поиска была введена после команды <code class="docutils literal notranslate"><span class="pre">?</span></code> (<code class="docutils literal notranslate"><span class="pre">?text</span></code>) то поиск происходит наверх.</p>
+Если фраза для поиска была введена после команды <code class="docutils literal notranslate"><span class="pre">?</span></code> (<code class="docutils literal notranslate"><span class="pre">?text</span></code>), то поиск выполняется выше по тексту.</p>
 <p>Информация о файле отобразится внизу по команде <code class="docutils literal notranslate"><span class="pre">:f</span></code>.</p>
 <div class="figure align-default">
 <img alt="../_images/less-file-info.png" src="../_images/less-file-info.png" />
 </div>
 <p>Опций и команд у утилиты намного больше, чем здесь описано.
-Сгруппированные по функциям команды можно посмотреть в любой момент.
-Она отобразится средствами <code class="docutils literal notranslate"><span class="pre">less</span></code> по команде <code class="docutils literal notranslate"><span class="pre">h</span></code> и закроется командой <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
-<p>Справочная система <code class="docutils literal notranslate"><span class="pre">man</span></code> для показа страницы справки по умолчанию использует утилиту <code class="docutils literal notranslate"><span class="pre">less</span></code>.
+Справку по командам можно посмотреть в любой момент по команд <code class="docutils literal notranslate"><span class="pre">h</span></code> и закрыть по <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p><a class="reference internal" href="help-system.html"><span class="doc std std-doc">Справочная система <code class="docutils literal notranslate"><span class="pre">man</span></code></span></a> для показа страницы справки использует утилиту <code class="docutils literal notranslate"><span class="pre">less</span></code>.
 То, что здесь показано, вы можете использовать для перемещения по справочной информации – искать описание опции по ее названию, опцию по ключевым словам и остальное.</p>
 </div>
 <div class="section" id="nano">
 <h2>Текстовый редактор nano<a class="headerlink" href="#nano" title="Permalink to this headline">¶</a></h2>
 <p>Утилита <code class="docutils literal notranslate"><span class="pre">nano</span></code> – это простой текстовый редактор, включенный по умолчанию в большинство дистрибутивов UNIX-подобных ОС.
 Редактор оформлен в псевдографическом стиле и поддерживает работу с мышью.
-По сравнению с <code class="docutils literal notranslate"><span class="pre">less</span></code> и <code class="docutils literal notranslate"><span class="pre">vim</span></code> он чуть привычен пользователям Windows.
-Но командам заданы нетипичные горячие клавиши (сохранение по <code class="docutils literal notranslate"><span class="pre">Ctrl-O</span></code>, поиск по <code class="docutils literal notranslate"><span class="pre">Ctrl-W</span></code>, копирование по <code class="docutils literal notranslate"><span class="pre">Alt-6</span></code>), которые приходится заново заучивать.</p>
+По сравнению с <code class="docutils literal notranslate"><span class="pre">less</span></code> и <code class="docutils literal notranslate"><span class="pre">vim</span></code> он чуть привычнее пользователям Windows.
+Но командам заданы нетипичные горячие клавиши (сохранение по <code class="docutils literal notranslate"><span class="pre">Ctrl-O</span></code>, поиск по <code class="docutils literal notranslate"><span class="pre">Ctrl-W</span></code>, копирование по <code class="docutils literal notranslate"><span class="pre">Alt-6</span></code>), которые отличаются от привычных.</p>
 <p>Редактор вызывается по команде</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano <span class="o">[</span>опции<span class="o">][</span>файлы<span class="o">]</span>
 </pre></div>
@@ -544,14 +547,14 @@
 <div class="figure align-default">
 <img alt="../_images/nano.png" src="../_images/nano.png" />
 </div>
-<p>В заголовке окна размещается информация о состоянии редактора: текущий номер открытого файла, имя текущего файла и признак изменения файла (<code class="docutils literal notranslate"><span class="pre">Изменён</span></code>).
+<p>В заголовке окна размещается информация о состоянии редактора: текущий номер открытого файла, имя текущего файла и состояние файла (<code class="docutils literal notranslate"><span class="pre">Изменён</span></code>).
 В рабочей области располагается редактируемый текст с подсвеченными словами и курсором для редактирования.
 Внизу рабочей области размещены кнопки с часто используемыми командами, аналог панели инструментов в оконных приложениях.
-Иногда диалоговые окна для ввода аргументов команд появляется внизу и подменяют кнопки.</p>
+Иногда диалоговые окна для ввода аргументов команд появляются внизу и заменяют кнопки.</p>
 <div class="figure align-default">
 <img alt="../_images/nano-save-file.png" src="../_images/nano-save-file.png" />
 </div>
-<p>Сообщения о результатах выполнения команд появляются и исчезают в нижней части окна, аналог панели состояния в оконных приложениях.</p>
+<p>Сообщения о результатах выполнения команд появляются и исчезают в нижней части окна – в аналоге панели состояния в оконных приложениях.</p>
 <p>Редактор управляется горячими клавишами: функциональными <code class="docutils literal notranslate"><span class="pre">F1</span></code>-<code class="docutils literal notranslate"><span class="pre">F12</span></code> и комбинациями с <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> и <code class="docutils literal notranslate"><span class="pre">Alt</span></code>.
 Клавиша <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> обозначена символом <code class="docutils literal notranslate"><span class="pre">^</span></code>, а <code class="docutils literal notranslate"><span class="pre">Alt</span></code> – с символом <code class="docutils literal notranslate"><span class="pre">M</span></code>.
 Следовательно <code class="docutils literal notranslate"><span class="pre">^X</span></code> переводится как <code class="docutils literal notranslate"><span class="pre">Ctrl-X</span></code>, а <code class="docutils literal notranslate"><span class="pre">M-U</span></code> – как <code class="docutils literal notranslate"><span class="pre">Alt-U</span></code>.
@@ -617,8 +620,8 @@
 </tbody>
 </table>
 </div>
-<p>Привычные <code class="docutils literal notranslate"><span class="pre">Ctrl-Z</span></code> и <code class="docutils literal notranslate"><span class="pre">Ctrl-U</span></code> представлены <code class="docutils literal notranslate"><span class="pre">Alt-U</span></code> (отмена последнего действия) и <code class="docutils literal notranslate"><span class="pre">Alt-E</span></code> (повтор отмененного действия).</p>
-<p>Команды выделения, копирования и вставки не похож на общепринятые <code class="docutils literal notranslate"><span class="pre">Shift</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl-V</span></code>.
+<p>Привычные <code class="docutils literal notranslate"><span class="pre">Ctrl-Z</span></code> и <code class="docutils literal notranslate"><span class="pre">Ctrl-Y</span></code> представлены <code class="docutils literal notranslate"><span class="pre">Alt-U</span></code> (отмена последнего действия) и <code class="docutils literal notranslate"><span class="pre">Alt-E</span></code> (повтор отмененного действия).</p>
+<p>Команды выделения, копирования и вставки не похожи на общепринятые <code class="docutils literal notranslate"><span class="pre">Shift</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl-V</span></code>.
 Начало выделения стартует по <code class="docutils literal notranslate"><span class="pre">Ctrl-^</span></code>.
 Выделенный текст вырезается <code class="docutils literal notranslate"><span class="pre">Ctrl-K</span></code> или копируется <code class="docutils literal notranslate"><span class="pre">Alt-6</span></code> в буфер обмена.
 Вставка из буфера обмена происходит по <code class="docutils literal notranslate"><span class="pre">Ctrl-U</span></code>.</p>
