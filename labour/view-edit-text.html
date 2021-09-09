@@ -340,6 +340,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Введение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#less">
    Утилита less
   </a>
@@ -355,7 +360,7 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id3">
    Вопросы для самоконтроля
   </a>
  </li>
@@ -372,12 +377,67 @@
                 
   <div class="section" id="id1">
 <h1>Просмотр и редактирование текста<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Просмотр и редактирование текста относится к основным операциям при работе с компьютером.
-В виде текстовых файлов представлены конфигурационные файлы, исходные тексты программ.</p>
-<p>Для работы нам понадобится текстовый файла.
-Сформируем его из справочной страницы по утилите <code class="docutils literal notranslate"><span class="pre">less</span></code> следующим образом:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man less &gt; example.txt
+<div class="section" id="id2">
+<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Файлы по содержимому делятся на два типа – текстовые и двоичные.
+Двоичные файлы содержат любые значения, а текстовые только те, которые воспринимаются как печатные символы.</p>
+<p>В текстовых данных встречаются <em>управляющие символы</em>, которые не отображаются при чтении, но управляют размещением текста.
+<em>Символ перевода строки</em> переносит последующие отображаемые символы на новую строку.
+Для разных ОС он разный:</p>
+<ul class="simple">
+<li><p>UNIX    – <code class="docutils literal notranslate"><span class="pre">LF</span></code>;</p></li>
+<li><p>Mac OS  – <code class="docutils literal notranslate"><span class="pre">CR</span></code>;</p></li>
+<li><p>Windows – два подряд идущих символа <code class="docutils literal notranslate"><span class="pre">CR</span></code> (0xD) и <code class="docutils literal notranslate"><span class="pre">LF</span></code> (0xA).</p></li>
+</ul>
+<p>В тексте выделяют <em>строки</em> – это последовательность символов, расположенных между двумя символами перевода строки.
+Если строка не содержит символов, то ее называют <em>пустой</em>.</p>
+<p>Управляющий <em>символ табуляции</em> <code class="docutils literal notranslate"><span class="pre">HT</span></code> (0x9) перемещает следующий за ним символ к ближайшей колонке, кратной 8.
+С помощью него выравнивают столбцы в таблицах.</p>
+<p>Работа с текстовыми файлами относится к основным операциям при работе с компьютером.
+В них хранят:</p>
+<ul class="simple">
+<li><p>справочную информацию;</p></li>
+<li><p>конфигурационные файлы;</p></li>
+<li><p>исходные коды программ;</p></li>
+<li><p>логи;</p></li>
+<li><p>размеченные данные (yaml, json, xml, html, rtf).</p></li>
+</ul>
+<p>Файлы просматривают, в них ищут информацию, редактируют: удаляют, меняют и добавляют символы.
+Для чтения текстового файла используют программы просмотра (viewer по английски), а для изменения – текстовые редакторы.
+Эти программы следует различать друг от друга.</p>
+<p>Программа просмотра не имеют той многой функциональности, что составляет редактор.
+Поэтому их внутреннее устройство намного проще и более производительнее в работе.
+Очевидно, что редакторы можно использовать для просмотра текстового файла.
+Можно подстраховаться, открыв файл в режиме “только для чтения”.
+Но если вам нужно смотреть и искать в файлах с большим размером, то лучше воспользоваться программой просмотра.</p>
+<p>Текстовые данные обладают некоторой структурой, упорядывающей содержимое.
+Она отличается для разных типов данных.
+Тип данных обычно указывается в <em>расширении файла</em> – части имени файла, идущей за последней точкой.</p>
+<p>Текстовый документ содержит читаемый текст и имеет расширение файла <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.
+Такой текст называют <em>плоским</em> (plan text).
+Символы в документах объединяются в слова, а слова в предложения.
+Слова разделяются друг от друга пробелами, а предложения – точкой и последующим пробелом.
+Предложения объединяются в абзацы.
+Абзацы разделяются пустыми строками.</p>
+<p>Иная структура в исходных кодах программ.
+Их содержимое следует правилам, которые обговаривает синтаксис языка программирования.
+Слова разделяются на переменные, названия функций, операторы, ключевые слова, строки.
+Их можно выделить визуально разными цветами.
+Это называют <em>подсветкой синтаксиса</em>.
+Слова в исходных кодах группируются не в предложения и абзацы, а в блоки кода, вызовы функций, объявления переменных, комментарии.</p>
+<p>Для последующей работы вам понадобятся текстовые файлы.</p>
+<p>Скопируйте в домашний каталог справочную страницу об утилите <code class="docutils literal notranslate"><span class="pre">less</span></code> следующим образом:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man less &gt; ~/less.help
 </pre></div>
+</div>
+<p>Заберите заголовочный файл <code class="docutils literal notranslate"><span class="pre">cmath</span></code> стандартной библиотеки C++ в домашний каталог:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /usr/include/c++/9/cmath ~/cmath
+</pre></div>
+</div>
+<p>Скопируйте конфигурационный файл утилиты <code class="docutils literal notranslate"><span class="pre">nanorc</span></code> к себе:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /etc/nanorc ~/nanorc.conf
+</pre></div>
+</div>
 </div>
 <div class="section" id="less">
 <h2>Утилита less<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h2>
@@ -752,8 +812,8 @@ Vim удобен при частом редактировании англояз
 <p>Выделение начинается с исходного положения курсора.
 К выделенному тексту можно применять вышеописанные команды редактирования.</p>
 </div>
-<div class="section" id="id2">
-<h2>Вопросы для самоконтроля<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>Вопросы для самоконтроля<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Откройте текстовый файл утилитой <code class="docutils literal notranslate"><span class="pre">less</span></code>.
 Попробуйте отредактировать содержимое и сохранить его на диск.</p></li>
