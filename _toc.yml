@@ -42,6 +42,7 @@ parts:
   chapters:
   - file: labour/create-virtual-machine
   - file: labour/view-edit-text
+  - file: labour/file-system
   - file: labour/help-system
   - file: labour/environment-variables
   - file: labour/command-line-parse
