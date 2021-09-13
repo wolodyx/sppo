@@ -46,8 +46,3 @@ parts:
   - file: labour/help-system
   - file: labour/environment-variables
   - file: labour/command-line-parse
-
-- caption: Презентации
-  chapters:
-  - file: report/intro.md
-  - file: report/computer-hardware
