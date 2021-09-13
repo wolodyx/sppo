@@ -251,23 +251,6 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Презентации
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../report/intro.html">
-   Введение в учебный предмет
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../report/computer-hardware.html">
-   Аппаратное обеспечение
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -340,21 +323,26 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   Перемещение по каталогам
+   Получение информации
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   Изменение файлов и каталогов
+   Перемещение по каталогам
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   Создание ссылок на файлы
+   Изменение файлов и каталогов
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
+   Создание ссылок на файлы
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
    Вопросы для самоконтроля
   </a>
  </li>
@@ -375,7 +363,64 @@
 http://heap.altlinux.org/alt-docs/textbooks/linux_intro/Filesystem_use.html
 -->
 <div class="section" id="id2">
-<h2>Перемещение по каталогам<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Получение информации<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ls
+pwd (<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory)</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skt@home:~/MyProjects/sppo$ ls -l
+итого <span class="m">72</span>
+drwxrwxr-x <span class="m">4</span> skt skt  <span class="m">4096</span> авг <span class="m">30</span> <span class="m">17</span>:59 _build
+-rwxrwxr-x <span class="m">1</span> skt skt   <span class="m">458</span> сен  <span class="m">1</span> <span class="m">21</span>:44 build.sh
+-rw-rw-r-- <span class="m">1</span> skt skt   <span class="m">955</span> сен  <span class="m">7</span> <span class="m">11</span>:16 _config.yml
+drwxrwxr-x <span class="m">2</span> skt skt  <span class="m">4096</span> сен  <span class="m">9</span> <span class="m">22</span>:38 images
+-rw-rw-r-- <span class="m">1</span> skt skt <span class="m">16580</span> сен <span class="m">11</span> <span class="m">22</span>:39 intro.md
+drwxrwxr-x <span class="m">3</span> skt skt  <span class="m">4096</span> сен <span class="m">11</span> <span class="m">17</span>:57 labour
+drwxrwxr-x <span class="m">2</span> skt skt  <span class="m">4096</span> сен  <span class="m">5</span> <span class="m">22</span>:04 lesson
+-rw-rw-r-- <span class="m">1</span> skt skt  <span class="m">9854</span> авг <span class="m">29</span> <span class="m">23</span>:16 logo.png
+-rw-rw-r-- <span class="m">1</span> skt skt  <span class="m">1054</span> авг <span class="m">30</span> <span class="m">11</span>:14 README.md
+drwxrwxr-x <span class="m">2</span> skt skt  <span class="m">4096</span> сен <span class="m">10</span> <span class="m">11</span>:10 report
+-rw-rw-r-- <span class="m">1</span> skt skt    <span class="m">30</span> авг <span class="m">29</span> <span class="m">23</span>:16 requirements.txt
+-rw-rw-r-- <span class="m">1</span> skt skt  <span class="m">1480</span> сен <span class="m">11</span> <span class="m">17</span>:57 _toc.yml
+</pre></div>
+</div>
+<p>По умолчанию, команда выводит размер файлов в байтах.
+Это не удобно, когда размер больше килобайта.
+Опция <code class="docutils literal notranslate"><span class="pre">-h</span></code> показывает размер в удобном для человека виде с обозначениями килобайтов (K), мегабайтов (М) и гигабайтов (G).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>skt@home:~$ ls -l -h /
+итого 2,1G
+lrwxrwxrwx   1 root root    7 июн 28 08:07 bin -&gt; usr/bin
+drwxr-xr-x   4 root root 4,0K сен  9 06:41 boot
+drwxrwxr-x   2 root root 4,0K июн 28 08:08 cdrom
+drwxr-xr-x  22 root root 4,5K сен 11 19:11 dev
+drwxr-xr-x 144 root root  12K сен 12 10:11 etc
+drwxr-xr-x   4 root root 4,0K июл  7 06:03 home
+lrwxrwxrwx   1 root root    7 июн 28 08:07 lib -&gt; usr/lib
+lrwxrwxrwx   1 root root    9 июн 28 08:07 lib32 -&gt; usr/lib32
+lrwxrwxrwx   1 root root    9 июн 28 08:07 lib64 -&gt; usr/lib64
+lrwxrwxrwx   1 root root   10 июн 28 08:07 libx32 -&gt; usr/libx32
+drwx------   2 root root  16K июн 28 08:06 lost+found
+drwxr-xr-x   3 root root 4,0K июл  2 19:09 media
+drwxr-xr-x   2 root root 4,0K фев  9  2021 mnt
+drwxr-xr-x   4 root root 4,0K сен  3 12:17 opt
+dr-xr-xr-x 393 root root    0 сен  1 22:25 proc
+drwx------   7 root root 4,0K авг 24 21:04 root
+drwxr-xr-x  36 root root 1,1K сен 12 06:13 run
+lrwxrwxrwx   1 root root    8 июн 28 08:07 sbin -&gt; usr/sbin
+drwxr-xr-x   8 root root 4,0K фев  9  2021 snap
+drwxr-xr-x   2 root root 4,0K фев  9  2021 srv
+-rw-------   1 root root 2,0G июн 28 08:06 swapfile
+dr-xr-xr-x  13 root root    0 сен  1 22:25 sys
+drwxrwxrwt  38 root root 4,0K сен 12 12:54 tmp
+drwxr-xr-x  14 root root 4,0K фев  9  2021 usr
+drwxr-xr-x  15 root root 4,0K июл  3 16:52 var
+</pre></div>
+</div>
+<p>Заметим, что размеры всех каталогов составляют 4 килобайта.
+Утилита посчитала только размер метаданных каталога, но не содержащих им данных.
+Для подсчета занимаемого файлами места используют команду <code class="docutils literal notranslate"><span class="pre">du</span></code>.</p>
+</div>
+<div class="section" id="id3">
+<h2>Перемещение по каталогам<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Обозначения каталогов:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> текущий;</p></li>
@@ -383,25 +428,23 @@ http://heap.altlinux.org/alt-docs/textbooks/linux_intro/Filesystem_use.html
 <li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> домашний;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> корневой.</p></li>
 </ul>
-<p>cd (<strong>c</strong>hange <strong>d</strong>ir)
-pwd (<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory)
-ls</p>
+<p>cd (<strong>c</strong>hange <strong>d</strong>ir)</p>
 </div>
-<div class="section" id="id3">
-<h2>Изменение файлов и каталогов<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>Изменение файлов и каталогов<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>mkdir (<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>)
 rm
 cp
 mv</p>
 </div>
-<div class="section" id="id4">
-<h2>Создание ссылок на файлы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>Создание ссылок на файлы<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln -s target-file ref-file
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Вопросы для самоконтроля<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>Вопросы для самоконтроля<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Создайте следующую иерархию каталогов в домашнем каталоге:</p></li>
 </ol>
@@ -417,6 +460,9 @@ mv</p>
    <span class="o">|-</span><span class="n">c6</span>
 </pre></div>
 </div>
+<ol class="simple">
+<li><p>Создайте замкнутую цепочку из символьных ссылоку.</p></li>
+</ol>
 </div>
 </div>
 

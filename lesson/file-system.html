@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -251,23 +253,6 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Презентации
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../report/intro.html">
-   Введение в учебный предмет
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../report/computer-hardware.html">
-   Аппаратное обеспечение
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -349,12 +334,32 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unix">
-   Особенности файловой системы UNIX
+  <a class="reference internal nav-link" href="#id4">
+   Каталоги и пути
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
+   Метаданные файла
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Операции над файлами
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Файловая система
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   Файлы-ссылки
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unix">
    Стандарт иерархии файловой системы в UNIX
   </a>
  </li>
@@ -369,7 +374,12 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id9">
+   Использованные источники
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
    Вопросы для самоконтроля
   </a>
  </li>
@@ -387,7 +397,7 @@
   <div class="section" id="id1">
 <h1>Файловая система<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Компьютер для долговременного хранения данных использует внешнее устройство <strong>диск</strong>.
-На нем хранится ядро операционной системы, программы и данные.</p>
+На нем хранятся ядро операционной системы, программы и данные.</p>
 <!--
 Дисковая память -- ресурс.
 Мультиплексирование в пространстве.
@@ -489,6 +499,9 @@
 Эти и другие задачи решают системные программисты – разработчики <em>файловых систем</em>.</p>
 <p>Фактическое порядок данных в файле на диске не повторяет аналогичный порядок данных в файле.
 Содержимое файла разбивается на блоки, а блоки размещаются в произвольном порядке.</p>
+</div>
+<div class="section" id="id4">
+<h2>Каталоги и пути<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Файлы размещаются в каталогах.
 Каталоги аналогично файлам обладают именами.
 Каталоги могут содержать вложенные каталоги.
@@ -565,20 +578,124 @@
 Полные пути к запускаемым файлам формируются не из текущего каталога и имени утилиты, а из каталогов, указанных в переменной среды <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.
 Если вам понадобится запустить собственную программу <code class="docutils literal notranslate"><span class="pre">myutility</span></code> из текущего каталога, то это можно сделать только командой <code class="docutils literal notranslate"><span class="pre">./myutility</span></code>.</p>
 </div>
-<p>Кроме данных файл содержит информацию о себе.
-Время создания, последнего изменения, последнего доступа.
-Это атрибуты:</p>
+</div>
+<div class="section" id="id5">
+<h2>Метаданные файла<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>С файлом, кроме данных, связана дополнительная информация, называемые <strong>метаданными</strong>.
+Состав метаданных отличается в разных файловых системах.</p>
 <ul class="simple">
-<li><p>только для чтения</p></li>
-<li><p>системный</p></li>
-<li><p>скрытый</p></li>
-<li><p>архивный</p></li>
+<li><p>имя с расширением;</p></li>
+<li><p>метки времени;</p></li>
+<li><p>атрибуты;</p></li>
+<li><p>права доступа.</p></li>
 </ul>
-<!-- Имя файла
+<p>Имя файла в большинстве случаев представлена строкой из печатных символов с исключением служебных символов.
+В имени файла выделяют <strong>расширение</strong>, которая располагается в конце и отделяется от остальной частьи точкой.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="o">.</span><span class="n">c</span>
+<span class="n">ld</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mf">64.</span><span class="n">so</span>
+<span class="n">image</span><span class="o">.</span><span class="n">png</span>
+<span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>Расширение указывает на тип файла, что именно в нем содержится:
+По расширению пользователь или система определяет, в какой программе открыть файл и как интерпретировать его содержимое.
+Примеры расширений:</p>
+<ul class="simple">
+<li><p>.txt плоский текст.</p></li>
+<li><p>.png, .jpg изображения в форматах png, jpg.</p></li>
+<li><p>.h, .c исходные коды программ на языке программирования Си.</p></li>
+<li><p>.so разделяемая библиотека.</p></li>
+</ul>
+<p>Имя файла должно быть уникальным в пределах каталога, т.е. в одном каталоге не могут содержаться два файла с одинаковым именем.
+Windows в именах файлов (и не только в них) не различает строчные и заглавные буквы: символы <code class="docutils literal notranslate"><span class="pre">a</span></code> и <code class="docutils literal notranslate"><span class="pre">A</span></code> считаются совпадающими.
+Такие имена называют <strong>регистронезависимыми</strong>.
+В системах UNIX ситуация обратная, и символы в разных регистрах отличаются.
+Каталоги <code class="docutils literal notranslate"><span class="pre">Мои</span> <span class="pre">Документы</span></code> и <code class="docutils literal notranslate"><span class="pre">Мои</span> <span class="pre">документы</span></code> в Windows относятся к одному каталогу, а в UNIX – к разным.
+Это следует помнить.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">Ошибка сборки программи из-за имен файлов</p>
+<p>Частая ошибка при сборке программ в UNIX, которые собираются в Windows, это отсутствие подключаемого заголовочного файла.
+Файл назван как <code class="docutils literal notranslate"><span class="pre">Xxxxx.h</span></code>, а в исходном коде подключается как <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;xxxxx.h&quot;</span></code>.</p>
+</div>
+<p>Не все символы могут быть использованы в именах файлов.
+В Windows для использования в именах файлов (и каталогов) запрещены символы с кодами 0-31 и печатные символы <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">:</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.
+Также именам файлов (и каталогов) не разрешено оканчиваться на пробел и точку.</p>
+<p>Рекордсменом по наименьшим запретам выступает UNIX, где только 2 символа запрещены из 256.
+Это разделитель в путях <code class="docutils literal notranslate"><span class="pre">/</span></code> и нулевой символ <code class="docutils literal notranslate"><span class="pre">\0</span></code> (признак окончания строки в языке программирования Си).
+Остальные 254 символа разрешены, даже управляющие символы из таблицы ASCI.</p>
+<p>К каждому файлу привязаны следующие метки времени:</p>
+<ul class="simple">
+<li><p>время создания – когда был создан файл;</p></li>
+<li><p>время доступа – когда в последний раз открывали файл;</p></li>
+<li><p>время модификации – когда в последний раз изменяли содержимое файла;</p></li>
+<li><p>время изменения – когда в последний раз изменяли метаданные файла.</p></li>
+</ul>
+<p>По названиям меток понятно, что они показывают.
+Запуск исполняемого файла связан с его считыванием из диска в оперативную память.
+Поэтому для программы метка времени доступа показывает, когда в последний раз она была запущена.</p>
+<p>Аналогичные метки привязаны к каталогам.
+Для каталога время доступа обновляется, когда просматривается его содержимое.
+Времена изменения и модификации каталога привязаны к аналогичным меткам последнего измененного файла внутри каталога.</p>
+<p>Метки времени вместе с утилитами для поиска и сортировки позволяют ответить на многие вопросы и решить важные задачи.</p>
+<ul class="simple">
+<li><p>Как найти файл с неизвестным именем, но примерно известным временем создания и модификации?</p></li>
+<li><p>Когда в последний раз меняли конфигурацию программы?</p></li>
+<li><p>Взламывали ли систему?</p></li>
+<li><p>Выполнять ли резервное копирование файла или он не менялся с прошлого раза?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Скрытый.   Стандартные средства просмотра не будут отображать файл.</p></li>
+<li><p>Только для чтения. Файл нельзя изменить.</p></li>
+<li><p>Системный. Файл важен для функционирования системы, поэтому не должен изменяться.</p></li>
+<li><p>Архивный.  Файл изменен с последнего резервного копирования.</p></li>
+<li><p>Сжатый.    Файл на диске хранится в сжатом виде.</p></li>
+<li><p>Зашифрованный. Файл хранится на диске в зашифрованном виде.</p></li>
+<li><p>Проиндексированный. Содержимое файла будет использовано для формирования поискового индекса – структуры для ускорения поиска.</p></li>
+</ul>
+<p>Одна из функций файловой системы – это защита файлов и каталогов от других пользователей.
+Другим пользователям ограничиваются в правах: им запрещают читать и записывать в файлы, изменять атрибуты файлов и создавать файлы.
+rwx - чтение, запись, выполнение.</p>
+<ul class="simple">
+<li><p>r – право открывать файл. Для каталога бит дает право получать его содержимое, т.е. просмотреть список файлов.</p></li>
+<li><p>w – право записывать файл. Для каталога бит дает право изменить список файлов, т.е. удалять, создавать и перемещать файлы.</p></li>
+<li><p>x – право на выполнение файла. Для каталога бит дает право</p></li>
+</ul>
+<p>Право на выполнение могут иметь как двоичные, так и текстовые файлы.
+Исполняемый двоичный файл отправляется на процессор.
+Исполняемый текстовый файл рассматривается как содержащий инструкции для интерпретатора.
+То, какой интерпретатор нужно использовать, требуется указать в первой строке файла в формате <code class="docutils literal notranslate"><span class="pre">#!&lt;путь</span> <span class="pre">к</span> <span class="pre">интерпретатору&gt;</span></code>.
+В качестве интерпретаторов могут быть <code class="docutils literal notranslate"><span class="pre">sh</span></code>, <code class="docutils literal notranslate"><span class="pre">bash</span></code>, <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">perl</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">#!/bin/bash</span>
+<span class="c1">#!/usr/bin/python</span>
+<span class="c1">#!/usr/bin/perl</span>
+</pre></div>
+</div>
+<p>Чтобы можно было удалить файл, необходимо иметь установленный атрибут <code class="docutils literal notranslate"><span class="pre">w</span></code> в файле и его родительском каталоге.
+Потому что удаление файла означает исключение файла из списка файлов каталога.</p>
+<p>Категории пользователей:</p>
+<ol class="simple">
+<li><p>для владельца</p></li>
+<li><p>для группы пользователей</p></li>
+<li><p>для остальных пользователей.</p></li>
+</ol>
+<p>В общедоступных каталогах всем пользователям и программам разрешают создавать и удалять файлы.
+Например, это каталог <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> с временными файлами.
+Любой программе позволено создать файл.
+Но так как каталогу установлено разрешение на запись <code class="docutils literal notranslate"><span class="pre">w</span></code>, то получается, что любой пользователь может удалить данные остальных пользователей.
+Чтобы такого не происходило, используется sticky-бит.
+Он указывает каталогу, что его файлы разрешается удалять только их владельцам.</p>
+</div>
+<div class="section" id="id6">
+<h2>Операции над файлами<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<!--
 Элемент каталога
 Метаданные файла
 Суперблок
-Операции над файлами: создать, удалить, записать, считать. -->
+-->
+</div>
+<div class="section" id="id7">
+<h2>Файловая система<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>Представьте себе, что у вас есть непрерывная область памяти фиксированного размера.
 Каким образом вы разместите на ней файлы с их данными, именами и атрибутами?
 Как представите каталоги и вложенности файлов и каталогов в другие каталоги?</p>
@@ -597,8 +714,8 @@
 При этом структура в памяти должна быть всегда целостной или, в худшем случае, быть восстанавливаемой.
 -->
 </div>
-<div class="section" id="unix">
-<h2>Особенности файловой системы UNIX<a class="headerlink" href="#unix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>Файлы-ссылки<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>В файловой системе существуют специальные файлы, которые вместо того, чтобы содержать данные, указывают на другие файлы.
 Такие файлы называют <em>ссылками</em>.
 Имя ссылки может отличаться от имени файла, на который она ссылается.
@@ -629,8 +746,8 @@
 И то, какая библиотека является текущей, показывает символическая ссылка.
 Программа, которой необходима разделяемая библиотека, загружает ее по символической ссылке.</p>
 </div>
-<div class="section" id="id4">
-<h2>Стандарт иерархии файловой системы в UNIX<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unix">
+<h2>Стандарт иерархии файловой системы в UNIX<a class="headerlink" href="#unix" title="Permalink to this headline">¶</a></h2>
 <p>В системах UNIX состав каталогов верхнего уровня и их назначение закреплены стандартом FHS (Filesystem Hierarchy Standard).
 Поддержка стандарта добровольное желание
 Последний раз документ обновлен в 2015 году и имеет версию 3.0.
@@ -679,12 +796,40 @@
 </div>
 <div class="section" id="fat">
 <h2>Файловая система FAT<a class="headerlink" href="#fat" title="Permalink to this headline">¶</a></h2>
+<p>Обратим наше внимание на семейство файловых систем FAT, как на самую простую из существующих.
+Это одна из немногих технологий Microsoft, подробности о которой известны.
+Было бы глупо пройти мимо такого легко доступного сокровища.</p>
+<p>На основе изучения внутреннего устройства FAT мы приобщимся к внутреннему устройству файловых систем.
+FAT позволяет сохранять длинные имена, атрибуты файлов типа “скрытый”, “только для чтения”, “системный”, “архивный” и метки времени.
+Она является полноценной файловой системой, хотя и родом из прошлого века.</p>
+<p>Первая из них, FAT12, была разработана еще в 1977 году специально для дискет, и затем адаптирована для персональных компьютеров с операционными ситемами DOS и Windows, пока ее не заменила более современная NTFS.
+Сегодня FAT чаще используется на дисках небольшого объема – флешках и картах памяти.</p>
+<p>В основе файловой системы лежит разбиение диска на кластеры и представление файлов в виде цепочки кластеров через таблицу размещения файлов.
+Серия из FAT12, FAT16, FAT32 и exFAT разработана в ответ на все увеличивающуюся объем дисковой памяти и отличается максимальным количеством адресуемых кластеров: <span class="math notranslate nohighlight">\(2^{12}\)</span>, <span class="math notranslate nohighlight">\(2^{16}\)</span>, <span class="math notranslate nohighlight">\(2^{32}\)</span> и <span class="math notranslate nohighlight">\(2^{64}\)</span>.</p>
+<p>Размер таблицы соответствует количеству кластеров, на которые разбит диск.
+Ячейка таблицы содержит указатель</p>
+<!--
+FAT (File Allocation Table) переводится как таблица распределения файлов.
+Хранится две копии таблицы на случай повреждения одной из них.
+Диск разбивается на кластеры, размер которых зависит от размера диска.
+Обновление данных в FAT занимает много времени, так как считывающая головка бегает от конца диска к началу, где располагается таблица ???
+Преимущество: малые накладные ресурсы при малых объемах диска.
+С увеличением размера производительность падает.
+Ограничен 4 Гб.
+-->
+<p>Каталоги в FAT представлены также как файлы.</p>
+<div class="figure align-default">
+<img alt="../_images/FAT32_file_entry.svg" src="../_images/FAT32_file_entry.svg" /></div>
 </div>
-<div class="section" id="id5">
-<h2>Вопросы для самоконтроля<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>Использованные источники<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Создайте замкнутую цепочку из символьных ссылоку.</p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/1976007/what-characters-are-forbidden-in-windows-and-linux-directory-names">What characters are forbidden in Windows and Linux directory names?</a></p></li>
+<li><p><a class="reference external" href="https://habr.com/ru/post/469667/">Права в Linux (chown, chmod, SUID, GUID, sticky bit, ACL, umask)</a></p></li>
 </ol>
+</div>
+<div class="section" id="id10">
+<h2>Вопросы для самоконтроля<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
