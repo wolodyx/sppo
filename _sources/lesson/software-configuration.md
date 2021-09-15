@@ -282,3 +282,7 @@ var text = JSON.stringify(jsonObject)
 
 Целостность реестра также может нарушиться.
 Это приведет к потере или изменению настроек всех программ.
+
+## Использованные источники
+
+1. [Understanding Linux configuration files](https://developer.ibm.com/articles/l-config/)
