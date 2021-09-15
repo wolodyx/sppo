@@ -82,14 +82,14 @@
 
 ### Текстовый формат XML
 
-```{image} ../images/XML-logo.png
+```{image} ../_images/XML-logo.png
 :name: xml-logo
 :height: 30px
 ```
 
 ### Текстовый формат JSON
 
-```{image} ../images/JSON-logo.png
+```{image} ../_images/JSON-logo.png
 :name: json-logo
 :height: 30px
 ```
@@ -132,7 +132,7 @@ var text = JSON.stringify(jsonObject)
 
 ### Текстовый формат JAML
 
-```{image} ../images/YAML-logo.png
+```{image} ../_images/YAML-logo.png
 :name: yaml-logo
 :height: 30px
 ```
@@ -260,13 +260,13 @@ var text = JSON.stringify(jsonObject)
 Системная утилита `regedit` предоставляет пользователям возможность просматривать и редактировать системный реестр.
 Она входит в стандартную поставку ОС и может быть вызвана командами `Пуск -> Выполнить -> regedit.exe`.
 
-```{figure} ../images/regedit.png
+```{figure} ../_images/regedit.png
 :name: regedit
 
 Программа для редактирования системного реестра
 ```
 
-```{figure} ../images/regedit-2.png
+```{figure} ../_images/regedit-2.png
 :name: regedit-2
 
 Разделы и параметры
