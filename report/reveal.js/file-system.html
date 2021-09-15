@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>СППО. Файловая система</title>
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -17,9 +17,123 @@
     <div class="reveal">
       <div class="slides">
 
-<section>Slide 1</section>
+<section>
+  <img src="../images/ram+rom.png"/>
+</section>
 
-<section>Slide 2</section>
+<section>
+  <h2>Диски</h2>
+  <img src="../../images/hard-drive.jpg"        height="200"/>
+  <img src="../../images/solid-state-drive.jpg" height="200"/>
+</section>
+
+<section>
+  <h2>Иерархия памяти</h2>
+  <img src="../../images/memory-hierarchy.jpg"/>
+</section>
+
+<section>
+  <h2>Зачем нужен диск</h2>
+  <ul>
+    <li>хранить данные;</li>
+    <li>переносить данные на расстояние;</li>
+    <li>обмениваться данными программам.</li>
+</section>
+
+<section>
+  <h2>HDD</h2>
+  <img src="../images/hdd-mechanism.jpg"/>
+</section>
+
+<section>
+  <h2>SSD</h2>
+  <img src="../images/ssd-mechanism.jpg"/>
+</section>
+
+<section>
+  <h2>Оптический диск</h2>
+  <img src="../images/optical-disk-mechanism.jpg"/>
+</section>
+
+<section>
+  <h2>Магнитная лента</h2>
+  <img src="../images/tape-mechanism.jpg"/>
+</section>
+
+<section>
+  <h2>Секторы и кластеры</h2>
+  <img src="../images/disk-structure.jpg"/>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+
+## Структура данных "список"
+
+```
+list
+ |  ┌───────┐   ┌───────┐   ┌───────┐   ┌───────┐
+ |  │data:  │   │data:  │   │data:  │   │data:  │
+ └─>│next: ─┼──>│next: ─┼──>│next: ─┼──>│next: ─┼──> NULL
+    └───────┘   └───────┘   └───────┘   └───────┘
+```
+  </script>
+</section>
+
+<section>
+  <h2>Файлы и каталоги</h2>
+  <img src="../../images/files-and-cataloges.png"/>
+</section>
+
+<section>
+  <h2>Путь к файлу (каталогу)</h2>
+  C:/ProgramFiles/Microsoft/Office/Word/word.exe
+</section>
+
+<section>
+  <h2>Относительный путь к файлу (каталогу)</h2>
+  [полный путь к файлу] = [путь к текущему каталогу] + [относительный путь к файлу]
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+
+* текущий каталог (`.`)
+* родительский каталог (`..`)
+
+```
+projects
+  |-lab1       <==== текущий каталог
+  |  |-main.c
+  |  |-task.html
+  |-lab2
+  |  |-main.c  <==== ../lab2/main.c
+  |  |-out.txt
+  |-lab3       <==== ../lab3/
+    ...
+```
+  </script>
+</section>
+
+<section>
+  <h2>Метаданные файла</h2>
+  <ul>
+    <li>имя с расширением;</li>
+    <li>метки времени;</li>
+    <li>атрибуты;</li>
+    <li>права доступа.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Имя и расширение файла</h2>
+  <ul>
+    <li>.txt плоский текст.</li>
+    <li>.png, .jpg изображения в форматах png, jpg.</li>
+    <li>.h, .c исходные коды программ на языке программирования Си.</li>
+    <li>.so разделяемая библиотека.</li>
+  </ul>
+</section>
 
 
 <section>
@@ -50,6 +164,14 @@
       </tr>
     </tbody>
   </table>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+* `bin`
+* `sbin`
+
+  </script>
 </section>
 
       </div>

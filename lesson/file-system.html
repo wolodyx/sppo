@@ -387,11 +387,16 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id12">
-   Использованные источники
+   Заключение
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id13">
+   Использованные источники
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
    Вопросы для самоконтроля
   </a>
  </li>
@@ -741,7 +746,7 @@ rwx - чтение, запись, выполнение.</p>
 В отличие от жесткой ссылки, она может ссылаться на каталоги, несуществующие файлы, файлы и каталоги из другой файловой системы.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Мягкие и жесткие ссылки вносят в древовидную структуру файловой системы горизонтальные связи и преобразуют ее в сетевую структуру.</p>
+<p>Символьные и жесткие ссылки вносят в древовидную структуру файловой системы горизонтальные связи.</p>
 </div>
 <p>Рассмотрим примеры, когда ссылки помогают решить проблемы, возникающие в программировании.</p>
 <p>Если файл или каталог по каким-то причинам имеет неудобное имя или расположение, а размер не позволяет их скопировать, то нужно воспользоваться ссылкой.
@@ -1047,22 +1052,9 @@ module.c = {2, 4, 10, 11, 12, 14, 15, 30, 31, 33}
 </div>
 </div>
 <div class="section" id="id12">
-<h2>Использованные источники<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/1976007/what-characters-are-forbidden-in-windows-and-linux-directory-names">What characters are forbidden in Windows and Linux directory names?</a></p></li>
-<li><p><a class="reference external" href="https://habr.com/ru/post/469667/">Права в Linux (chown, chmod, SUID, GUID, sticky bit, ACL, umask)</a></p></li>
-<li><p><a class="reference external" href="http://www.interface.ru/home.asp?artId=18352">Анатомия журналируемых файловых систем Linux</a></p></li>
-</ol>
-</div>
-<div class="section" id="id13">
-<h2>Вопросы для самоконтроля<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Вычислите размер неиспользуемой части последнего кластера файла.</p></li>
-<li><p>Зачем в служебной области FAT понадобилось хранить номер последнего выделенного кластера?</p></li>
-</ol>
+<h2>Заключение<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <!--
 % Зачем нам файловая система
-
 Разработчику необходимо знать про внутреннее устройство файловой системы:
 * чтобы создавать программы, эффективно работающие с файлами;
 * познакомится примером сериализации сложных структур данных.
@@ -1105,13 +1097,23 @@ module.c = {2, 4, 10, 11, 12, 14, 15, 30, 31, 33}
 Внутреннее устройство формата файла `doc` от Microsoft Office выглядит как файловая система поверх файла.
 Современный формат `docx`, основанный на стандарте "Office Open XML", состоит из наборов файлов и каталогов, заархивированных в формате `zip`.
 -->
+</div>
+<div class="section" id="id13">
+<h2>Использованные источники<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/1976007/what-characters-are-forbidden-in-windows-and-linux-directory-names">What characters are forbidden in Windows and Linux directory names?</a></p></li>
+<li><p><a class="reference external" href="https://habr.com/ru/post/469667/">Права в Linux (chown, chmod, SUID, GUID, sticky bit, ACL, umask)</a></p></li>
+<li><p><a class="reference external" href="http://www.interface.ru/home.asp?artId=18352">Анатомия журналируемых файловых систем Linux</a></p></li>
+</ol>
+</div>
+<div class="section" id="id14">
+<h2>Вопросы для самоконтроля<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Вычислите размер неиспользуемой части последнего кластера файла.</p></li>
+<li><p>Зачем в служебной области FAT понадобилось хранить номер последнего выделенного кластера?</p></li>
+</ol>
 <!--
 Особенность UNIX-систем: во все, что можно записать/считать данные представлены в виде файла.
--->
-<!--
-Элемент каталога
-Метаданные файла
-Суперблок
 -->
 </div>
 </div>
