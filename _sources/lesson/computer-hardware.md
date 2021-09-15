@@ -18,7 +18,7 @@
 Его пользователь не обладает специальными техническими знаниями.
 Поэтому на компьютер установлена операционная система с графическим интерфейсом.
 
-```{figure} ../images/personal-computer.png
+```{figure} ../_images/personal-computer.png
 :height: 300
 Типичный настольный персональный компьютер
 ```
@@ -96,16 +96,16 @@ Wintel (Windows + Intel) Операционная система Windows и пр
 % Фитнес-браслет SUNWIND SB10
 % Смарт-кольцо balance4life
 
-```{image} ../images/google-glass.jpg
+```{image} ../_images/google-glass.jpg
 :height: 150
 ```
-```{image} ../images/smart-clock.webp
+```{image} ../_images/smart-clock.webp
 :height: 150
 ```
-```{image} ../images/fitness-braslet.jpg
+```{image} ../_images/fitness-braslet.jpg
 :height: 150
 ```
-```{image} ../images/smart-ring.webp
+```{image} ../_images/smart-ring.webp
 :height: 150
 ```
 
@@ -232,7 +232,7 @@ Wintel (Windows + Intel) Операционная система Windows и пр
 
 Мейнфрейм -- это универсальный, отказоустойчивый и высокопроизводительный сервер для работы с большими объемами данных.
 
-```{figure} ../images/mainframe-2x.webp
+```{figure} ../_images/mainframe-2x.webp
 :height: 300
 Мейнфрейм IBM z15 с двумя стойками
 ```
@@ -320,7 +320,7 @@ Wintel (Windows + Intel) Операционная система Windows и пр
 Распределенность компонентов системы позволяет улучшать разные характеристики: производительность и надежность.
 Большая часть суперкомпьютеров, входящих в рейтинг TOP500 относятся к кластерам.
 
-```{figure} ../images/Supercomputers-history.svg
+```{figure} ../_images/Supercomputers-history.svg
 ```
 
 
