@@ -323,6 +323,49 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Интерфейс командной строки
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Устройство видеоадаптера в текстовом режиме
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ascii">
+   Символы ASCII
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Кодовые страницы
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Командная оболочка
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Управляющие последовательности
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tmux">
+   tmux
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -333,6 +376,237 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>Текстовый интерфейс<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>В текстовом видеорежиме экран разбивается на прямоугольные области — знакоместа.
+В каждой из этой области может находиться один символ из ограниченного набора.</p>
+<p>Текстовый режим пришел на замену телетайпам, в которых информация печаталась на бумаге.
+Технически это стало возможных благодаря появлению мониторов с электронно-лучевыми трубками.
+Манипулировать каждым пикселем на экране еще не получалось из-за дороговизны памяти с произвольным доступом.</p>
+<p>Возможность вывода символа на любом месте экрана позволяло редактировать информацию.
+Также увеличило плотность изображения данных, не расходовалась бумага.</p>
+<div class="section" id="id2">
+<h2>Интерфейс командной строки<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2>Устройство видеоадаптера в текстовом режиме<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Видеоадаптер, работающий в текстовом режиме, имеет две области памяти.
+Первая область, текстовый буфер, хранит коды символов для каждого знакоместа.
+Вторая область таблица символов, хранит битовое изображение каждого из 256 возможных символов.
+Схема видеоадаптера превращала текстовый буфер в значения пикселей на экране.
+Пиксел задается координатами X и Y.
+По этим координатам вычисляется позиция знакоместа на экране через деление значений координат пикселя на размеры знакоместа.
+Остаток от деления показывает координаты пикселя внутри знакоместа.
+По координатам знакоместа из текстового буфера выбиралось значение символа.
+А из таблицы символов по значению символа и координатам пикселя внутри знакоместа определялось значение пикселя на экране монитора.</p>
+<p>Вычислим количество ячеек памяти, необходимой видеоадаптеру в текстовом режиме.
+Пусть монитор имеет 80 на 25 знакомест.
+Каждое знакоместо состоит из 9 на 14 пикселей.
+Пиксель может иметь два состояния.
+Тогда текстовый буфер занимает <code class="docutils literal notranslate"><span class="pre">80*25=2000</span></code> байт.
+Таблица символов потребляет <code class="docutils literal notranslate"><span class="pre">256*((9-1)*(14-1))/8=3328</span></code> байт.
+Заметим, что таблица символов может быть фиксированной и записана на микросхеме ПЗУ, что было дешевле ОЗУ.
+Для графического режима, при котором каждый пиксель имел бы свое значение, нужна была бы память <code class="docutils literal notranslate"><span class="pre">(80x25)x(9x14)x1/8=31500</span></code> байтов.
+Это больше в 16 раз для фиксированной таблицы символов и больше 6 раз при размещении таблицы символов в ОЗУ.
+Но даже 32 Кб были слишком большими значениями для 1970 годов.</p>
+</div>
+<div class="section" id="ascii">
+<h2>Символы ASCII<a class="headerlink" href="#ascii" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   .0  .1  .2  .3  .4  .5  .6  .7  .8  .9  .A  .B  .C  .D  .E  .F
+  ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
+0.│NUL│SOH│STX│ETX│EOT│ENQ│ACK│BEL│BS │HT │LF │VT │FF │CR │SO │SI │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+1.│DLE│DC1│DC2│DC3│DC4│NAK│SYN│ETB│CAN│EM │SUB│ESC│FS │GS │RS │US │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+2.│   │ ! │ &quot; │ # │ $ │ % │ &amp; │ &#39; │ ( │ ) │ * │ + │ , │ - │ . │ / │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+3.│ 0 │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ : │ ; │ &lt; │ = │ &gt; │ ? │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+4.│ @ │ A │ B │ C │ D │ E │ F │ G │ H │ I │ J │ K │ L │ M │ N │ O │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+5.│ P │ Q │ R │ S │ T │ U │ V │ W │ X │ Y │ Z │ [ │ \ │ ] │ ^ │ _ │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+6.│ ` │ a │ b │ c │ d │ e │ f │ g │ h │ i │ j │ k │ l │ m │ n │ o │
+  ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+7.│ p │ q │ r │ s │ t │ u │ v │ w │ x │ y │ z │ { │ | │ } │ ~ │DEL│
+  └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
+</pre></div>
+</div>
+<p>Управляющие символы:
+|——|—-|—-|</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NULL</p></td>
+<td><p>00</p></td>
+<td><p>\0</p></td>
+</tr>
+<tr class="row-odd"><td><p>BEL</p></td>
+<td><p>07</p></td>
+<td><p>\a</p></td>
+</tr>
+<tr class="row-even"><td><p>BS</p></td>
+<td><p>08</p></td>
+<td><p>\b</p></td>
+</tr>
+<tr class="row-odd"><td><p>HT</p></td>
+<td><p>09</p></td>
+<td><p>\t</p></td>
+</tr>
+<tr class="row-even"><td><p>LF</p></td>
+<td><p>0a</p></td>
+<td><p>\n</p></td>
+</tr>
+<tr class="row-odd"><td><p>VT</p></td>
+<td><p>0b</p></td>
+<td><p>\v</p></td>
+</tr>
+<tr class="row-even"><td><p>FF</p></td>
+<td><p>0c</p></td>
+<td><p>\f</p></td>
+</tr>
+<tr class="row-odd"><td><p>CR</p></td>
+<td><p>0d</p></td>
+<td><p>\r</p></td>
+</tr>
+<tr class="row-even"><td><p>SO</p></td>
+<td><p>0e</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SI</p></td>
+<td><p>0f</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAN</p></td>
+<td><p>18</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SUB</p></td>
+<td><p>1a</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ESC</p></td>
+<td><p>1b</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL</p></td>
+<td><p>7f</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>Кодовые страницы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Размер выводимого на экран символа составляет 8 бит, что позволяло иметь ему 256 различных значений.
+Набор символов, сопоставленных каждому значению байта, называется кодовой страницей.
+Существуют большое разнообразие кодовых страниц.
+Так, в русской версии ОС Windows используется Windows-1251, русская версия UNIX-совместимых ОС использует ‘KOI8’, на компьютерах Mac — MacCyrillic.</p>
+<p>Не все символы имеют графическое изображение.
+Такие символы называют управляющими, в противоположность остальным — печатным.
+Стандарт POSIX выделяет восемь управляющих символов.</p>
+<p>|——–|———————————————|</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Символ</p></th>
+<th class="head"><p>Обозначение</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>\b</p></td>
+<td><p>Backspace, удаление символа перед курсором.</p></td>
+</tr>
+<tr class="row-odd"><td><p>\0</p></td>
+<td><p>NULL, конец строки, конец текстового файла.</p></td>
+</tr>
+<tr class="row-even"><td><p>\t</p></td>
+<td><p>Tab, горизонтальная табуляция.</p></td>
+</tr>
+<tr class="row-odd"><td><p>\n</p></td>
+<td><p>Перенос текста на новую строку.</p></td>
+</tr>
+<tr class="row-even"><td><p>\a</p></td>
+<td><p>Звуковой сигнал.</p></td>
+</tr>
+<tr class="row-odd"><td><p>\v</p></td>
+<td><p>Вертикальная табуляция.</p></td>
+</tr>
+<tr class="row-even"><td><p>\f</p></td>
+<td><p>Перевод страницы.</p></td>
+</tr>
+<tr class="row-odd"><td><p>\r</p></td>
+<td><p>Возврат каретки.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Печатные символы имеют графическое представление для вывода на экран. Сюда входят:</p>
+<ul class="simple">
+<li><p>буквы алфавита, как строчные (a, b, c, …, z), так и заглавные (A, B, C, …, Z);</p></li>
+<li><p>цифры (0, 1, 2, …, 9);</p></li>
+<li><p>знаки препинания (.,,, :, !, &amp;, …);</p></li>
+<li><p>псевдографические символы.</p></li>
+</ul>
+<p>Четырем наборам символов — управляющих, английским буквам, цифрам и знакам препинания — закреплены числовые коды от 0 до 127 стандартом ASCII.
+Символы и их числовые коды представлены в виде таблицы ASCII.
+Она занимает первую половину значений 8 битового символа.
+Вторая половина определяется символами национального алфавита неанглоязычных стран.</p>
+<p>ASCII символы позволяют изобразить на экране относительно сложные графические изображения.
+Например, таблицы с заголовками (рисунок), объемные буквы (рисунок).
+Эмоции могут быть изображены в виде смайлов улыбки :-), грусти :-(, смеха :-D, недовольства :-/, удивления o_O, сильного удивления 8-O и остального.
+Направление в искусстве, при котором с помощью символов из таблицы ASCII представляют изображения, называется ASCII-графиков.</p>
+<p>Для расширения возможностей рисования в текстовом режиме, таблица символов расширена псевдографическими элементами.
+Их можно разделить на две части:</p>
+<ul class="simple">
+<li><p>символы для рисования рамок;</p></li>
+<li><p>блочные элементы.</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>Командная оболочка<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Интерфейс командной строки:</p>
+<ul class="simple">
+<li><p>командная оболочка: sh, bash csh, …</p></li>
+<li><p>аргументы командной строки;</p></li>
+<li><p>readline</p></li>
+<li><p>команды для работы со строкой:
+*) история команд, поиск ctrl-r, ctrl-s; просмотр history; ctrl-p, ctrl-n предыдущие и следующая команда.
+*) редактирование и перемещение по строке: ctrl-d, ctrl-a, ctrl-e, ctrl-f, ctrl-b</p></li>
+</ul>
+<p>Псевдографический интерфейс:</p>
+<ul class="simple">
+<li><p>последовательности управляющих символов;</p></li>
+<li><p>ncurses;</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>Управляющие последовательности<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Управляющие последовательности появились, потому что не хватило управляющих символов ASCII.
+Многие клавиши, не связанные с печатными символами, а также комбинации клавиш, генерируют управляющие последовательности.</p>
+<p>ESC 0x1B (033) 27
+<code class="docutils literal notranslate"><span class="pre">printf(&quot;\0x1b&quot;)</span></code>
+<code class="docutils literal notranslate"><span class="pre">printf(&quot;\033&quot;)</span></code></p>
+</div>
+<div class="section" id="tmux">
+<h2>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h2>
+<p>Одновременная работа в нескольких терминалах (в рамках одной сессии) возможна благодаря утилите <code class="docutils literal notranslate"><span class="pre">tmux</span></code>.
+Она позволяет разбить терминальное окно на вложенные окна, называемые панелями.
+Каждая панель выглядит как самостоятельный терминал и имеет свою историю команд.</p>
+<div class="figure align-default">
+<img alt="../_images/tmux.png" src="../_images/tmux.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tmux</span></code> принимает команду после комбинации клавиш <code class="docutils literal notranslate"><span class="pre">ctrl-b</span></code>.
+Отсюда, команда <code class="docutils literal notranslate"><span class="pre">%</span></code> вводится через последовательность <code class="docutils literal notranslate"><span class="pre">ctrl-b,</span> <span class="pre">%</span></code>.</p>
+<p>Текущая панель разбивается пополам командами <code class="docutils literal notranslate"><span class="pre">%</span></code> и <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> по вертикали и горизонтали соответственно.
+Панель закроется по команде оболочки <code class="docutils literal notranslate"><span class="pre">exit</span></code>.
+Если закрывается последняя панель, то происходит выход из <code class="docutils literal notranslate"><span class="pre">tmux</span></code> в командную оболочку.
+Переключение между панелями происходит по командам <code class="docutils literal notranslate"><span class="pre">→</span></code>, <code class="docutils literal notranslate"><span class="pre">←</span></code>, <code class="docutils literal notranslate"><span class="pre">↑</span></code>, <code class="docutils literal notranslate"><span class="pre">↓</span></code>.
+Размер текущей панели настраивается клавишами перемещения (<code class="docutils literal notranslate"><span class="pre">→</span></code>, <code class="docutils literal notranslate"><span class="pre">←</span></code>, <code class="docutils literal notranslate"><span class="pre">↑</span></code>, <code class="docutils literal notranslate"><span class="pre">↓</span></code>) при набранном <code class="docutils literal notranslate"><span class="pre">ctrl-b</span></code>, но еще не отпущенном <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">tmux</span></code> позволяет держать открытыми одновременно текстовый редактор и интерпретатор команд.
+Вы можете редактировать текст программы, собирать и запускать программу, просматривать результаты работы.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>

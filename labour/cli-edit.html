@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Редактирование командной строки &#8212; Системное и прикладное ПО</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Системное и прикладное ПО</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Введение в учебный предмет
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/computer-in-life.html">
+   Компьютер в жизни человека
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/binary-code.html">
+   Двоичный код
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/computer-hardware.html">
+   Типы компьютеров
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/computer-software.html">
+   Программное обеспечение
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Операционная система
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/operating-system.html">
+   Операционная система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/development-tools.html">
+   Инструментальные средства
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/file-system.html">
+   Файловая система
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/process-management.html">
+   Процессы
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Связь с программами
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/ipc.html">
+   Межпроцессное взаимодействие
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lesson/text-based-user-interface.html">
+   Текстовый интерфейс
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lesson/command-line-format.html">
+     Формат команд командной строки
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/graphical-user-interface.html">
+   Графический интерфейс
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Разработка программ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-license.html">
+   Лицензирование
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/programming-languages.html">
+   Языки программирования
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-development.html">
+   Проект программы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-configuration.html">
+   Конфигурирование
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-distribution.html">
+   Распространение
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson/software-installation.html">
+   Установка
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Практические занятия
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="create-virtual-machine.html">
+   Создание виртуальной машины
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="view-edit-text.html">
+   Просмотр и редактирование текста
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="file-system.html">
+   Работа с файловой системой
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="help-system.html">
+   Справочная система man
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="environment-variables.html">
+   Работа с переменными среды
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="command-line-parse.html">
+   Разбор аргументов программы
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/labour/cli-edit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>Редактирование командной строки<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Появление командной строки стало революционным событием в общении человека с компьютером.
+Она позволила пользователю общаться с компьютером интерактивно.
+Подготовленная строка передавалась обслуживающей пользователя командной оболочке.
+Оболочка разбирала строку на команду и ее аргументы, запускала ассоциированную с командой программу и передавала ей аргументы.
+Запущенный процесс блокирует командную оболочку, выводит данные на экран и/или запрашивает данные.
+Запрашиваемые процессом данные блокируют сам процесс до тех пор, пока строка не будет набрана и передана ей после отправки <code class="docutils literal notranslate"><span class="pre">^j</span></code>.
+То есть, данные подготавливались для запуска программы и для передачи ей данных.</p>
+<p>Операционная система UNIX для работы с терминалом предлагает простой текстовой редактор строки.
+Набор и редактирование строки взяла на себя система, упростив таким образом остальные программы.
+Это упростило пользовательские программы, так как им не надо заботиться о редактировании данных.</p>
+<p>Текстовый редактор строки располагается в подсистеме TTY и активирован в каноническом режиме.
+У редактора строки отсутствовал управляемый курсор.
+Он есть, но всегда привязан к концу строки.
+Удаление и добавление выполняется с конца.
+Его перемещение вперед происходит при наборе символов, а перемещение назад – всегда удаление.
+Часть управляющих символов зарезервирована для управления редактором.
+Это:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">^?</span></code> – удаление символа;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^w</span></code> – удаление слова;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^u</span></code> – удаление строки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^r</span></code> – повторный вывод строки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^v</span></code> – маркер литерала;</p></li>
+</ul>
+<p>Команды удаления, выполняющие одновременно функции перемещения назад, могут удалить символ, слово или строку.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; command arg1 arg2_
+  ┬           ┬   ┬│ Удаляет последние:
+  │           │   └┤ ^? символ
+  │           └────┤ ^w слово
+  └────────────────┘ ^u строку
+</pre></div>
+</div>
+<p>Терминал разделяется между многими процессами, каждый из которых в любой момент может отправить данные на экран.
+Если это сделает фоновый процесс при наборе пользователем очередной команды, то отраженное на экране содержимое текстового буфера испортится.
+Пользователь может попросить систему заново вывести содержимое буфера на экран отправкой специального символа <code class="docutils literal notranslate"><span class="pre">^r</span></code> (reprint).</p>
+<p>Часть символов ASCII-таблицы предназначены для управления системой и не отправляются процессу.
+Выше мы перечислили некоторые из них.
+Это символы <code class="docutils literal notranslate"><span class="pre">^?</span></code>, <code class="docutils literal notranslate"><span class="pre">^w</span></code>, <code class="docutils literal notranslate"><span class="pre">^u</span></code>, используемые для редактирования строки, символ <code class="docutils literal notranslate"><span class="pre">^r</span></code> для повторного вывода редактируемой строки на экран, символ <code class="docutils literal notranslate"><span class="pre">^c</span></code> для завершения процесса.
+Может понадобиться передать процессу символ, интерпретируемый системой как управляющий.
+Если эти символы необходимо передать процессу как часть строки, то используют маркер <code class="docutils literal notranslate"><span class="pre">^v</span></code>, который превдаряя отключает управляющее свойство следующего за ним символа.
+То есть, если вы хотите передать процессу символ <code class="docutils literal notranslate"><span class="pre">^c</span></code> на вход, который в обычном состоянии завершил бы его, необходимо набрать <code class="docutils literal notranslate"><span class="pre">^v^c</span></code>.
+Сам символ передастся, если набрать <code class="docutils literal notranslate"><span class="pre">^v^v</span></code>.</p>
+<p>Чтобы вернуться назад в прошлое, запустите bash с опцией noediting прямо из текущего терминала:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash --noediting
+</pre></div>
+</div>
+<p>Попытка воспользоваться клавишами управления курсора приводит к выводу символов <code class="docutils literal notranslate"><span class="pre">^[[A</span></code>, <code class="docutils literal notranslate"><span class="pre">^[[B</span></code>, <code class="docutils literal notranslate"><span class="pre">^[[C</span></code>, <code class="docutils literal notranslate"><span class="pre">^[[D</span></code>.
+Нажатие на них генерирует управляющую последовательность символов, начинающаяся с символа <code class="docutils literal notranslate"><span class="pre">esc</span></code> (<code class="docutils literal notranslate"><span class="pre">^[</span></code>).</p>
+<p>По сегодняшним меркам эти 5 команд очень скудны и не позволяют эффективно набирать текст.
+В редакторе не достает управления курсором, поддержки функциональных клавиш, истории команд, автодополнения.
+Расширить функциональные возможности канонического режима выглядели бы нелепо.
+Так как код редактора находится на стороне ядра, то внести туда изменения намного сложнее, чем в код пользовательской программы.
+Вызов функций связана с предпочтениями пользователей.
+Потому что вводимые им данные можно условно разделить на две части – команды с их аргументами и пользовательские данные для запущенной команды.
+Поэтому история команд нужна только для первой части, а история данных не особо интересна.
+Во-вторых, усложняет редактор.</p>
+<p>Все эти … говорят о том, что продвинутый редактор текстовой строки должен разместиться в пользовательском коде.
+Так оно и есть: современные командные оболочки используют свои продвинутые возможности под подготовке командной строки.
+Командная оболочка bash предоставляет продвинутые возможности по вводу командной строки.
+Она отказывается от канонического режима терминальной подсистемы UNIX и организует редактирование посредством библиотеки GNU Readline.
+По умолчанию, bash для редактирования строки использует комбинации клавиш, свойственные редактору emacs.
+Именно их мы и изучим.</p>
+<p>Очистка экрана выполняется по клавишам <code class="docutils literal notranslate"><span class="pre">ctrl-l</span></code>.</p>
+<p>Перемещения курсора вперед:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-f</span></code> – на один символ (f – forward);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alt-f</span></code>  – на слово;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-e</span></code> – в конец строки;</p></li>
+</ul>
+<p>Перемещения курсора назад:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-b</span></code> – на один символ (b – back);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alt-b</span></code>  – на одно слово;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-a</span></code> – в начало строки;</p></li>
+</ul>
+<p>Прежде чем перейти на удаления и вставки, научимся отменять выполненные действия.
+Это нам понадобится, чтобы вернуть измененную строку для упражнений.
+Универсальная и общеизвестная команда <code class="docutils literal notranslate"><span class="pre">ctrl-z</span></code> (undo) в <code class="docutils literal notranslate"><span class="pre">emacs</span></code> имеет альтернативу как <code class="docutils literal notranslate"><span class="pre">ctrl-_</span></code> или <code class="docutils literal notranslate"><span class="pre">ctrl-x</span> <span class="pre">ctrl-u</span></code>.</p>
+<p>Удаление:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-d</span></code> – символа под курсором. Аналог клавиши (del);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-k</span></code> – от начала курсора до конца строки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-u</span></code> – от начала курсора до начала строки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alt-d</span></code>  – от начала курсора до конца слова;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alt-backspace</span></code> – от курсора до начала слова;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-w</span></code> – от курсора до предыдущего пробела.</p></li>
+</ul>
+<p>Команда <code class="docutils literal notranslate"><span class="pre">ctrl-w</span></code> удаляет от курсора до предыдущего пробела.
+На практике ее можно использовать для удаления ровно одного аргумента в строке.</p>
+<p>Удаляемый текст помещается в буфер.
+При вставке текста по команде <code class="docutils literal notranslate"><span class="pre">ctrl-y</span></code> текст берется из вершины буфера.
+При этом предыдущий текст не перетирается, а сдвигается ниже.</p>
+<p>Вставка текста:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrl-y</span></code> вставка текста из буфера.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alt-y</span></code>  прокручивание буфера и вставка текста из вершины буфера.</p></li>
+</ul>
+<p>Аргументы команд.
+<code class="docutils literal notranslate"><span class="pre">alt--</span></code> знак-аргумент.
+<code class="docutils literal notranslate"><span class="pre">alt-7</span></code> число-аргумент.</p>
+<p>Поиск в истории команд:
+<code class="docutils literal notranslate"><span class="pre">ctrl-r</span></code> реверсивный инкрементальный поиск по истории команд. Останов поиска по <code class="docutils literal notranslate"><span class="pre">ESC</span></code> (<code class="docutils literal notranslate"><span class="pre">ctrl-j</span></code>).</p>
+<p>Существует и альтернативный способ – редактирование в стиле vi (vim).
+Переключение между этими двумя режимами выполняется посредством встроенной команды set:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> -o emacs
+<span class="nb">set</span> -o vi
+</pre></div>
+</div>
+<p><a class="reference external" href="https://catonmat.net/ftp/readline-emacs-editing-mode-cheat-sheet.txt">Emacs Editing Mode Cheat Sheet</a></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./labour"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Лазарев В.В.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
